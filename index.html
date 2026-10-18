@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#061a3a">
-<meta name="description" content="Youness Taik, Electronics and Hardware Engineer. PCB design, embedded systems and AI edge hardware.">
-<title>Youness Taik | Electronics &amp; Hardware Engineer</title>
+<meta name="description" content="Jounium YT, Electronics and Hardware Engineer. PCB design, embedded systems and AI edge hardware.">
+<title>Jounium YT | Electronics &amp; Hardware Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -116,7 +116,8 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .pills span{padding:4px 10px;border:1px solid rgba(111,182,255,.35);border-radius:6px;font:500 12px var(--mono);color:#cfe2fb}
 
 /* Projects */
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.proj{grid-column:span 2}
 .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(23,105,170,.1);transition:transform .25s,box-shadow .25s}
 .proj:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(23,105,170,.2)}
 .art{position:relative;overflow:hidden;min-height:190px;display:grid;place-items:center;background:linear-gradient(rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(135deg,var(--deep),var(--navy))}
@@ -125,7 +126,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .chip{position:relative;display:grid;place-items:center;width:104px;height:104px;border:2px solid var(--sky);border-radius:14px;background:linear-gradient(140deg,#14407a,#081c3a);color:var(--cyan);font:500 14px var(--mono)}
 .chip::before{content:"";position:absolute;inset:-22px;border:1.5px dashed rgba(111,182,255,.55);border-radius:22px;animation:ring 3s ease-in-out infinite}
 @keyframes ring{50%{transform:scale(1.14);opacity:.4}}
-.art i{position:absolute;left:16px;top:12px;font:400 12px var(--mono);color:#8fb3de;font-style:normal}
+.art i,.viewer>i{position:absolute;left:16px;top:12px;font:400 12px var(--mono);color:#8fb3de;font-style:normal}
 .pbody{padding:26px}
 .pbody h3{font-size:20px}
 .pbody p{margin-top:10px;color:var(--soft);font-size:15.5px}
@@ -133,6 +134,27 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .pfoot{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font:500 12px var(--mono);color:var(--soft)}
 .pfoot a{color:var(--royal);font-weight:700}
 .note{margin-top:24px;padding:16px 20px;border:1.5px dashed #9fbfe4;border-radius:10px;color:var(--soft);font-size:15px;background:rgba(255,255,255,.6)}
+
+
+/* 3D viewer */
+.proj.feature{grid-column:1/-1;display:grid;grid-template-columns:1.6fr 1fr}
+.proj.feature .pbody{display:flex;flex-direction:column;justify-content:center;padding:38px}
+.proj.feature h3{font-size:26px}
+.viewer{position:relative;min-height:500px;overflow:hidden;cursor:grab;background:linear-gradient(rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,radial-gradient(circle at 50% 45%,#12418a,var(--deep) 75%)}
+.viewer:active{cursor:grabbing}
+.viewer canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.viewer>i{z-index:3}
+[hidden]{display:none!important}
+.vstate{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:16px;padding:24px;text-align:center;color:#cfe2fb;transition:opacity .5s}
+.vstate.off{opacity:0;pointer-events:none}
+.vstate p{max-width:28em;font-size:15.5px}
+.bar{width:230px;height:6px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .3s}
+.vstate .btn{cursor:pointer}
+.vhint{position:absolute;left:16px;bottom:16px;z-index:3;font:500 12px var(--mono);color:#aac0de;pointer-events:none}
+.vctl{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;gap:8px}
+.vctl button{width:40px;height:40px;border-radius:10px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:700 17px var(--head);cursor:pointer;transition:background .2s}
+.vctl button:hover{background:var(--royal)}
 
 /* Workflow */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;counter-reset:s}
@@ -158,12 +180,16 @@ footer a:hover{color:var(--cyan)}
   .contact .box{flex-direction:column;align-items:flex-start;padding:34px}
   .acts{flex-direction:row;flex-wrap:wrap}
   .links a:not(.cta){display:none}
+  .projects{grid-template-columns:1fr 1fr}.proj{grid-column:auto}
+  .proj.feature{grid-column:1/-1;grid-template-columns:1fr}
+  .viewer{min-height:420px}
 }
 @media(max-width:600px){
   section{padding:72px 0}.hero{padding-top:128px}
   .grid3,.projects,.steps{grid-template-columns:1fr}
   .tag.a{left:0}.tag.b{right:0}
   .btns .btn{width:100%}
+  .viewer{min-height:360px}.proj.feature .pbody{padding:26px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -173,7 +199,7 @@ footer a:hover{color:var(--cyan)}
 
 <header>
   <nav class="container" aria-label="Main">
-    <a class="brand" href="#home" aria-label="Youness Taik home"><span class="mark">YT</span><span>Youness Taik<small>Engineering portfolio</small></span></a>
+    <a class="brand" href="#home" aria-label="Jounium YT home"><span class="mark">YT</span><span>Jounium YT<small>Engineering portfolio</small></span></a>
     <div class="links">
       <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a>
       <a class="cta" href="#contact">Contact</a>
@@ -188,7 +214,7 @@ footer a:hover{color:var(--cyan)}
     <div>
       <div class="live"><span class="dot"></span>Electronics and hardware engineering</div>
       <h1>Designing hardware.<span>Building intelligence.</span></h1>
-      <p class="lead">I'm Youness Taik, an electronics and hardware engineer focused on PCB design, embedded systems and AI edge hardware: small, efficient devices that think where the data is.</p>
+      <p class="lead">I'm Jounium YT, an electronics and hardware engineer focused on PCB design, embedded systems and AI edge hardware: small, efficient devices that think where the data is.</p>
       <div class="btns">
         <a class="btn solid" href="#projects">Explore my projects</a>
         <a class="btn line" href="#contact">Get in touch</a>
@@ -274,7 +300,25 @@ footer a:hover{color:var(--cyan)}
       <p>A place to document real designs, engineering decisions, prototypes and lessons learned.</p>
     </div>
     <div class="projects">
-      <article class="proj"><div class="art"><i>Project 1</i><div class="chip">PCB</div></div><div class="pbody"><h3>Custom PCB design</h3><p>Document a real PCB project: its purpose, circuit architecture, component choices, layout and design challenges.</p><div class="pills"><span>Schematic</span><span>Layout</span><span>KiCad</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
+      <article class="proj feature">
+        <div class="viewer" id="viewer">
+          <i>Project 1 &middot; Interactive 3D</i>
+          <div class="vstate" id="vstate">
+            <div class="chip">AI-BOARD</div>
+            <p id="vmsg">Interactive 3D model of the AI board. Drag it with your mouse to rotate.</p>
+            <div class="bar" id="vbar" hidden><i id="vfill"></i></div>
+            <button class="btn solid" id="vgo" type="button">Load the 3D board</button>
+            <label class="btn line" id="vpick" hidden>Choose AI-BOARD.step<input type="file" id="vfile" accept=".step,.stp" hidden></label>
+          </div>
+          <div class="vhint" id="vhint" hidden>Drag to rotate. Use + and &minus; to zoom.</div>
+          <div class="vctl" id="vctl" hidden>
+            <button id="zi" type="button" aria-label="Zoom in">+</button>
+            <button id="zo" type="button" aria-label="Zoom out">&minus;</button>
+            <button id="rs" type="button" aria-label="Reset view">&#10226;</button>
+          </div>
+        </div>
+        <div class="pbody"><h3>AI-BOARD: custom PCB design</h3><p>My AI board, designed in KiCad and shown here as a live 3D model. Turn it with your mouse to inspect the layout, the components and the board from every side.</p><div class="pills"><span>KiCad</span><span>Layout</span><span>3D / STEP</span></div><div class="pfoot"><span>Rotate it yourself</span><a href="#contact">Discuss</a></div></div>
+      </article>
       <article class="proj"><div class="art"><i>Project 2</i><div class="chip">ESP32</div></div><div class="pbody"><h3>Embedded hardware platform</h3><p>Describe a real microcontroller project: peripherals, communication interfaces, power supply and firmware integration.</p><div class="pills"><span>Microcontroller</span><span>Interfaces</span><span>Firmware</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
       <article class="proj"><div class="art"><i>Project 3</i><div class="chip">POWER</div></div><div class="pbody"><h3>Power management and protection</h3><p>Present a real power design with voltage regulation, protection choices, calculations and test results.</p><div class="pills"><span>Regulation</span><span>USB-C</span><span>Protection</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
       <article class="proj"><div class="art"><i>Project 4</i><div class="chip">EDGE AI</div></div><div class="pbody"><h3>AI edge hardware exploration</h3><p>Showcase a real experiment with an edge platform: local inference, hardware acceleration or power constraints.</p><div class="pills"><span>Edge computing</span><span>Inference</span><span>Efficiency</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
@@ -319,7 +363,7 @@ footer a:hover{color:var(--cyan)}
 
 <footer>
   <div class="container">
-    <span>&copy; <span id="yr">2026</span> Youness Taik. Engineering portfolio.</span>
+    <span>&copy; <span id="yr">2026</span> Jounium YT. Engineering portfolio.</span>
     <a href="#home">Back to top</a>
   </div>
 </footer>
@@ -356,6 +400,100 @@ var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
   addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY});
   size();draw();
 })();
+</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+// Interactive 3D viewer for AI-BOARD.step (keep the .step file in the same folder as this page)
+const $=id=>document.getElementById(id), V=$('viewer'), STEP='AI-BOARD.step';
+const CDN='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/';
+const WORKER=`importScripts('${CDN}occt-import-js.js');
+onmessage=async e=>{try{const o=await occtimportjs({locateFile:n=>'${CDN}'+n});
+postMessage({ok:1,r:o.ReadStepFile(new Uint8Array(e.data),{linearUnit:'millimeter',linearDeflectionType:'bounding_box_ratio',linearDeflection:.003,angularDeflection:.6})})}
+catch(err){postMessage({ok:0,e:String(err)})}}`;
+const msg=t=>$('vmsg').textContent=t, bar=p=>$('vfill').style.width=p*100+'%';
+let started=false;
+
+async function download(){
+  const res=await fetch(STEP); if(!res.ok) throw new Error('HTTP '+res.status);
+  const total=+res.headers.get('content-length')||36e6, rd=res.body.getReader(), parts=[]; let got=0;
+  for(;;){const {done,value}=await rd.read(); if(done)break; parts.push(value); got+=value.length; bar(Math.min(.6,got/total*.6));}
+  const all=new Uint8Array(got); let o=0; for(const p of parts){all.set(p,o);o+=p.length}
+  return all.buffer;
+}
+function convert(buf){
+  return new Promise((ok,no)=>{
+    const w=new Worker(URL.createObjectURL(new Blob([WORKER],{type:'text/javascript'})));
+    w.onmessage=e=>{w.terminate(); e.data.ok&&e.data.r.success?ok(e.data.r):no(new Error(e.data.e||'STEP conversion failed'))};
+    w.onerror=no; w.postMessage(buf,[buf]);
+  });
+}
+async function show(result){
+  const THREE=await import('three'), {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
+  const ren=new THREE.WebGLRenderer({antialias:true,alpha:true});
+  ren.setPixelRatio(Math.min(devicePixelRatio,2)); V.prepend(ren.domElement);
+  const scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1,.1,1e4);
+  scene.add(new THREE.HemisphereLight(0xdbe9ff,0x10284a,1.3));
+  const key=new THREE.DirectionalLight(0xffffff,2.4); key.position.set(1,2,1.5); scene.add(key);
+  const fill=new THREE.DirectionalLight(0x6fb6ff,1.1); fill.position.set(-2,1,-1.5); scene.add(fill);
+
+  const mk=c=>new THREE.MeshStandardMaterial({color:c?new THREE.Color().setRGB(c[0],c[1],c[2],THREE.SRGBColorSpace):0x9fb4cc,metalness:.35,roughness:.5,side:THREE.DoubleSide});
+  const g=new THREE.Group();
+  for(const m of result.meshes){
+    const geo=new THREE.BufferGeometry();
+    geo.setAttribute('position',new THREE.Float32BufferAttribute(m.attributes.position.array,3));
+    m.attributes.normal?geo.setAttribute('normal',new THREE.Float32BufferAttribute(m.attributes.normal.array,3)):0;
+    geo.setIndex(m.index.array); if(!m.attributes.normal)geo.computeVertexNormals();
+    let mat=mk(m.color);
+    if(m.brep_faces&&m.brep_faces.some(f=>f.color)){
+      const list=[],seen={};
+      for(const f of m.brep_faces){const c=f.color||m.color,k=c?c.join():'d';
+        if(!(k in seen)){seen[k]=list.length;list.push(mk(c))}
+        geo.addGroup(f.first*3,(f.last-f.first+1)*3,seen[k]);}
+      mat=list;
+    }
+    g.add(new THREE.Mesh(geo,mat));
+  }
+  g.rotation.x=-Math.PI/2;            // KiCad boards are Z-up: lay the board flat
+  g.updateMatrixWorld(true);
+  const box=new THREE.Box3().setFromObject(g); g.position.sub(box.getCenter(new THREE.Vector3()));
+  scene.add(g);
+  const size=box.getSize(new THREE.Vector3()).length(), d=size*1.1, home=new THREE.Vector3(d*.55,d*.6,d*.8);
+  cam.near=size/200; cam.far=size*30; cam.position.copy(home);
+
+  const ctl=new OrbitControls(cam,ren.domElement);
+  ctl.enableDamping=true; ctl.enablePan=false; ctl.enableZoom=false;   // wheel keeps scrolling the page
+  ctl.minDistance=size*.35; ctl.maxDistance=size*3;
+  ctl.autoRotate=!matchMedia('(prefers-reduced-motion:reduce)').matches; ctl.autoRotateSpeed=1.4;
+  ctl.addEventListener('start',()=>ctl.autoRotate=false);             // the visitor takes control
+
+  const zoom=k=>{const v=cam.position.clone().sub(ctl.target).multiplyScalar(k);
+    cam.position.copy(ctl.target).add(v.setLength(THREE.MathUtils.clamp(v.length(),ctl.minDistance,ctl.maxDistance)))};
+  $('zi').onclick=()=>zoom(.8); $('zo').onclick=()=>zoom(1.25);
+  $('rs').onclick=()=>{cam.position.copy(home);ctl.target.set(0,0,0)};
+
+  new ResizeObserver(()=>{const w=V.clientWidth,h=V.clientHeight; ren.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix()}).observe(V);
+  let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(V);
+  (function loop(){requestAnimationFrame(loop); if(vis){ctl.update();ren.render(scene,cam)}})();
+  $('vstate').classList.add('off'); $('vhint').hidden=$('vctl').hidden=false;
+}
+async function run(get){
+  if(started)return; started=true;
+  $('vgo').hidden=$('vpick').hidden=true; $('vbar').hidden=false; bar(.02);
+  try{
+    msg('Downloading the board file…'); const buf=await get();
+    msg('Building the 3D model. This can take a few seconds…'); bar(.7);
+    const r=await convert(buf); msg('Almost ready…'); bar(.95); await show(r);
+  }catch(err){
+    console.error(err); started=false; $('vbar').hidden=true;
+    msg('The 3D file could not be loaded automatically. Make sure AI-BOARD.step sits next to this page, or choose it from your computer.');
+    $('vgo').textContent='Try again'; $('vgo').hidden=$('vpick').hidden=false;
+  }
+}
+$('vgo').onclick=()=>run(download);
+$('vfile').onchange=e=>e.target.files[0]&&run(()=>e.target.files[0].arrayBuffer());
+new IntersectionObserver((e,ob)=>{
+  if(e[0].isIntersecting){ob.disconnect(); if(innerWidth>900&&!(navigator.connection&&navigator.connection.saveData))run(download)}
+},{rootMargin:'200px'}).observe(V);
 </script>
 </body>
 </html>
