@@ -32,7 +32,7 @@ section{padding:104px 0}
 .head{max-width:680px;margin-bottom:54px}
 .head p{margin-top:16px;color:var(--soft)}
 .dark .head p{color:var(--mutedD)}
- 
+
 /* Header */
 header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(6,26,58,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(111,182,255,.18)}
 nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -44,7 +44,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .links a:hover{color:#fff}
 .links .cta{color:var(--deep);background:var(--sky);padding:10px 20px;border-radius:9px}
 .links .cta:hover{background:var(--cyan)}
- 
+
 /* Buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:10px;font:700 15px var(--head);transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px)}
@@ -52,7 +52,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .btn.solid:hover{background:var(--cyan)}
 .btn.line{border:1.5px solid #4d7fbb;color:#fff}
 .btn.line:hover{background:rgba(255,255,255,.08)}
- 
+
 /* Hero */
 .hero{position:relative;overflow:hidden;color:#fff;padding:160px 0 110px;background:radial-gradient(800px 480px at 82% 38%,rgba(47,140,255,.32),transparent 70%)}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:drift 14s ease-in-out infinite alternate}
@@ -67,7 +67,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .hero h1 span{display:block;background:linear-gradient(90deg,var(--sky),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lead{margin:24px 0 34px;font-size:19px;color:var(--mutedD);max-width:32em}
 .btns{display:flex;flex-wrap:wrap;gap:14px}
- 
+
 /* Hero board */
 .board{position:relative}
 .board svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 70px rgba(0,10,40,.7))}
@@ -82,13 +82,13 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .tag.a{left:-12px;top:10%}
 .tag.b{right:-8px;bottom:8%;animation-delay:-3s}
 @keyframes float{50%{transform:translateY(-10px)}}
- 
+
 /* Ticker */
 .ticker{overflow:hidden;background:var(--ice);border-block:1px solid var(--line);padding:18px 0;position:relative;z-index:1}
 .track{display:flex;gap:14px;width:max-content;animation:scroll 40s linear infinite}
 .track span{padding:7px 18px;border:1.5px solid #b7d0ee;border-radius:99px;background:#fff;color:var(--royal);font:500 14px var(--mono);white-space:nowrap}
 @keyframes scroll{to{transform:translateX(-50%)}}
- 
+
 /* Light sections */
 .light{background:rgba(246,250,255,.95)}
 .ice{background:rgba(234,243,255,.96)}
@@ -103,7 +103,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .focus div{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;background:#fff}
 .focus b{display:block;font:700 16px var(--head)}
 .focus small{color:var(--soft);font-size:15px}
- 
+
 /* Expertise (deep blue) */
 .dark{color:#fff;background:linear-gradient(180deg,rgba(6,26,58,.8),rgba(10,42,87,.88))}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -114,7 +114,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .card p{margin-top:12px;color:var(--mutedD);font-size:15.5px}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .pills span{padding:4px 10px;border:1px solid rgba(111,182,255,.35);border-radius:6px;font:500 12px var(--mono);color:#cfe2fb}
- 
+
 /* Projects */
 .projects{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
 .proj{grid-column:span 2}
@@ -134,8 +134,8 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .pfoot{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font:500 12px var(--mono);color:var(--soft)}
 .pfoot a{color:var(--royal);font-weight:700}
 .note{margin-top:24px;padding:16px 20px;border:1.5px dashed #9fbfe4;border-radius:10px;color:var(--soft);font-size:15px;background:rgba(255,255,255,.6)}
- 
- 
+
+
 /* 3D viewer */
 .proj.feature{grid-column:1/-1;display:grid;grid-template-columns:1.6fr 1fr}
 .proj.feature .pbody{display:flex;flex-direction:column;justify-content:center;padding:38px}
@@ -155,7 +155,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .vctl{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;gap:8px}
 .vctl button{width:40px;height:40px;border-radius:10px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:700 17px var(--head);cursor:pointer;transition:background .2s}
 .vctl button:hover{background:var(--royal)}
- 
+
 /* Workflow */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;counter-reset:s}
 .steps::before{content:"";position:absolute;left:48px;right:0;top:23px;height:2px;background:linear-gradient(90deg,var(--blue),var(--line))}
@@ -163,7 +163,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .step::before{content:counter(s);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--royal);color:#fff;font:700 18px var(--head);margin-bottom:22px;box-shadow:0 0 0 7px var(--ice)}
 .step h3{font-size:19px}
 .step p{margin-top:8px;color:var(--soft);font-size:15.5px}
- 
+
 /* Contact */
 .contact .box{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:52px;border:1px solid rgba(111,182,255,.35);border-radius:22px;background:linear-gradient(135deg,rgba(23,105,170,.45),rgba(6,26,58,.7));backdrop-filter:blur(10px)}
 .contact h2 span{color:var(--cyan)}
@@ -172,7 +172,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 footer{background:#041227;color:var(--mutedD);padding:28px 0;font-size:14px}
 footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a:hover{color:var(--cyan)}
- 
+
 @media(max-width:900px){
   .hero-grid,.about{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr 1fr}
@@ -196,7 +196,7 @@ footer a:hover{color:var(--cyan)}
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
- 
+
 <header>
   <nav class="container" aria-label="Main">
     <a class="brand" href="#home" aria-label="Jounium YT home"><span class="mark">YT</span><span>Jounium YT<small>Engineering portfolio</small></span></a>
@@ -206,7 +206,7 @@ footer a:hover{color:var(--cyan)}
     </div>
   </nav>
 </header>
- 
+
 <main>
 <section class="hero" id="home">
   <div class="orb o1"></div><div class="orb o2"></div>
@@ -220,7 +220,7 @@ footer a:hover{color:var(--cyan)}
         <a class="btn line" href="#contact">Get in touch</a>
       </div>
     </div>
- 
+
     <div class="board" role="img" aria-label="Animated circuit board with an AI chip at the center">
       <svg viewBox="0 0 520 460" aria-hidden="true">
         <defs>
@@ -246,13 +246,13 @@ footer a:hover{color:var(--cyan)}
     </div>
   </div>
 </section>
- 
+
 <div class="ticker" aria-hidden="true">
   <div class="track" id="track">
     <span>KiCad</span><span>PCB layout</span><span>ESP32</span><span>STM32</span><span>USB-C</span><span>SPI</span><span>I²C</span><span>DC-DC</span><span>Low power</span><span>Edge AI</span><span>TinyML</span><span>Inference</span><span>DFM</span><span>Firmware</span><span>Signal integrity</span>
   </div>
 </div>
- 
+
 <section class="light" id="about">
   <div class="container about">
     <div class="id">
@@ -273,7 +273,7 @@ footer a:hover{color:var(--cyan)}
     </div>
   </div>
 </section>
- 
+
 <section class="dark" id="expertise">
   <div class="container">
     <div class="head">
@@ -291,7 +291,7 @@ footer a:hover{color:var(--cyan)}
     </div>
   </div>
 </section>
- 
+
 <section class="light" id="projects">
   <div class="container">
     <div class="head">
@@ -326,7 +326,7 @@ footer a:hover{color:var(--cyan)}
     <p class="note">Portfolio note: these four cards are placeholders, not claims that the projects are finished. Replace each one with your real work, photos, results and repository links, and remove any card that is not a real project.</p>
   </div>
 </section>
- 
+
 <section class="ice" id="workflow">
   <div class="container">
     <div class="head">
@@ -342,7 +342,7 @@ footer a:hover{color:var(--cyan)}
     </div>
   </div>
 </section>
- 
+
 <section class="dark contact" id="contact">
   <div class="container">
     <div class="box">
@@ -360,18 +360,18 @@ footer a:hover{color:var(--cyan)}
   </div>
 </section>
 </main>
- 
+
 <footer>
   <div class="container">
     <span>&copy; <span id="yr">2026</span> Jounium YT. Engineering portfolio.</span>
     <a href="#home">Back to top</a>
   </div>
 </footer>
- 
+
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
- 
+
 // Living tech network behind the page
 (function(){
   var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,P=[],m={x:-999,y:-999},
@@ -412,7 +412,7 @@ postMessage({ok:1,r:o.ReadStepFile(new Uint8Array(e.data),{linearUnit:'millimete
 catch(err){postMessage({ok:0,e:String(err)})}}`;
 const msg=t=>$('vmsg').textContent=t, bar=p=>$('vfill').style.width=p*100+'%';
 let started=false;
- 
+
 async function download(){
   const res=await fetch(STEP); if(!res.ok) throw new Error('HTTP '+res.status);
   const total=+res.headers.get('content-length')||36e6, rd=res.body.getReader(), parts=[]; let got=0;
@@ -435,7 +435,7 @@ async function show(result){
   scene.add(new THREE.HemisphereLight(0xdbe9ff,0x10284a,1.3));
   const key=new THREE.DirectionalLight(0xffffff,2.4); key.position.set(1,2,1.5); scene.add(key);
   const fill=new THREE.DirectionalLight(0x6fb6ff,1.1); fill.position.set(-2,1,-1.5); scene.add(fill);
- 
+
   const mk=c=>new THREE.MeshStandardMaterial({color:c?new THREE.Color().setRGB(c[0],c[1],c[2],THREE.SRGBColorSpace):0x9fb4cc,metalness:.35,roughness:.5,side:THREE.DoubleSide});
   const g=new THREE.Group();
   for(const m of result.meshes){
@@ -459,18 +459,18 @@ async function show(result){
   scene.add(g);
   const size=box.getSize(new THREE.Vector3()).length(), d=size*1.1, home=new THREE.Vector3(d*.55,d*.6,d*.8);
   cam.near=size/200; cam.far=size*30; cam.position.copy(home);
- 
+
   const ctl=new OrbitControls(cam,ren.domElement);
   ctl.enableDamping=true; ctl.enablePan=false; ctl.enableZoom=false;   // wheel keeps scrolling the page
   ctl.minDistance=size*.35; ctl.maxDistance=size*3;
   ctl.autoRotate=!matchMedia('(prefers-reduced-motion:reduce)').matches; ctl.autoRotateSpeed=1.4;
   ctl.addEventListener('start',()=>ctl.autoRotate=false);             // the visitor takes control
- 
+
   const zoom=k=>{const v=cam.position.clone().sub(ctl.target).multiplyScalar(k);
     cam.position.copy(ctl.target).add(v.setLength(THREE.MathUtils.clamp(v.length(),ctl.minDistance,ctl.maxDistance)))};
   $('zi').onclick=()=>zoom(.8); $('zo').onclick=()=>zoom(1.25);
   $('rs').onclick=()=>{cam.position.copy(home);ctl.target.set(0,0,0)};
- 
+
   new ResizeObserver(()=>{const w=V.clientWidth,h=V.clientHeight; ren.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix()}).observe(V);
   let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(V);
   (function loop(){requestAnimationFrame(loop); if(vis){ctl.update();ren.render(scene,cam)}})();
@@ -497,4 +497,3 @@ new IntersectionObserver((e,ob)=>{
 </script>
 </body>
 </html>
- 
