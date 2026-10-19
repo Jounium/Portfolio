@@ -137,8 +137,8 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 
 
 /* 3D viewer */
-.proj.feature{grid-column:1/-1;display:grid;grid-template-columns:1.6fr 1fr}
-.proj.feature .pbody{display:flex;flex-direction:column;justify-content:center;padding:38px}
+.proj.feature{grid-column:1/-1;display:block}
+.proj.feature .pbody{display:none}
 .proj.feature h3{font-size:26px}
 .viewer{position:relative;min-height:500px;overflow:hidden;cursor:grab;background:linear-gradient(rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,radial-gradient(circle at 50% 45%,#12418a,var(--deep) 75%)}
 .viewer:active{cursor:grabbing}
@@ -297,18 +297,16 @@ footer a:hover{color:var(--cyan)}
     <div class="head">
       <div class="label">Selected work</div>
       <h2>Projects and experiments</h2>
-      <p>A place to document real designs, engineering decisions, prototypes and lessons learned.</p>
+      <p>Explore selected open-source projects to spark inspiration and transform innovative concepts into practical solutions.</p>
     </div>
     <div class="projects">
       <article class="proj feature">
         <div class="viewer" id="viewer">
           <i>Project 1 &middot; Interactive 3D</i>
           <div class="vstate" id="vstate">
-            <div class="chip">AI-BOARD</div>
             <p id="vmsg">Interactive 3D model of the AI board. Drag it with your mouse to rotate.</p>
             <div class="bar" id="vbar" hidden><i id="vfill"></i></div>
             <button class="btn solid" id="vgo" type="button">Load the 3D board</button>
-            <label class="btn line" id="vpick" hidden>Choose AI-BOARD.step<input type="file" id="vfile" accept=".step,.stp" hidden></label>
           </div>
           <div class="vhint" id="vhint" hidden>Drag to rotate. Use + and &minus; to zoom.</div>
           <div class="vctl" id="vctl" hidden>
@@ -317,13 +315,8 @@ footer a:hover{color:var(--cyan)}
             <button id="rs" type="button" aria-label="Reset view">&#10226;</button>
           </div>
         </div>
-        <div class="pbody"><h3>AI-BOARD: custom PCB design</h3><p>My AI board, designed in KiCad and shown here as a live 3D model. Turn it with your mouse to inspect the layout, the components and the board from every side.</p><div class="pills"><span>KiCad</span><span>Layout</span><span>3D / STEP</span></div><div class="pfoot"><span>Rotate it yourself</span><a href="#contact">Discuss</a></div></div>
       </article>
-      <article class="proj"><div class="art"><i>Project 2</i><div class="chip">ESP32</div></div><div class="pbody"><h3>Embedded hardware platform</h3><p>Describe a real microcontroller project: peripherals, communication interfaces, power supply and firmware integration.</p><div class="pills"><span>Microcontroller</span><span>Interfaces</span><span>Firmware</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
-      <article class="proj"><div class="art"><i>Project 3</i><div class="chip">POWER</div></div><div class="pbody"><h3>Power management and protection</h3><p>Present a real power design with voltage regulation, protection choices, calculations and test results.</p><div class="pills"><span>Regulation</span><span>USB-C</span><span>Protection</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
-      <article class="proj"><div class="art"><i>Project 4</i><div class="chip">EDGE AI</div></div><div class="pbody"><h3>AI edge hardware exploration</h3><p>Showcase a real experiment with an edge platform: local inference, hardware acceleration or power constraints.</p><div class="pills"><span>Edge computing</span><span>Inference</span><span>Efficiency</span></div><div class="pfoot"><span>Add your project details</span><a href="#contact">Discuss</a></div></div></article>
     </div>
-    <p class="note">Portfolio note: these four cards are placeholders, not claims that the projects are finished. Replace each one with your real work, photos, results and repository links, and remove any card that is not a real project.</p>
   </div>
 </section>
 
@@ -332,7 +325,7 @@ footer a:hover{color:var(--cyan)}
     <div class="head">
       <div class="label">Engineering approach</div>
       <h2>Think clearly. Build methodically.</h2>
-      <p>A structured process turns a concept into a hardware design you can test.</p>
+      <p>A structured process transforms your vision into high-quality hardware solutions that solve real problems, optimize performance, and turn your ideas into reality.</p>
     </div>
     <div class="steps">
       <div class="step"><h3>Define</h3><p>Clarify functions, interfaces, power limits, dimensions and intended use.</p></div>
@@ -347,14 +340,12 @@ footer a:hover{color:var(--cyan)}
   <div class="container">
     <div class="box">
       <div>
-        <h2>Let's talk <span>hardware.</span></h2>
-        <p>Interested in my work, have a technical question, or want to discuss an engineering opportunity? Reach out through GitHub or LinkedIn.</p>
+        <h2>Let's drive innovation. <span>Let's change reality.</span></h2>
+        <p>Have an idea or engineering challenge? Connect with me on LinkedIn to discuss your project and explore what we can build together.</p>
       </div>
       <div class="acts">
-        <!-- Replace YOUR_GITHUB_USERNAME with your real GitHub username -->
-        <a class="btn solid" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">My GitHub</a>
-        <!-- Replace with your real LinkedIn profile URL -->
-        <a class="btn line" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn solid" href="https://ma.linkedin.com/in/youness-taik-434166200" target="_blank" rel="noopener noreferrer">Chat with me on LinkedIn</a>
+        <a class="btn line" href="https://ma.linkedin.com/in/youness-taik-434166200" target="_blank" rel="noopener noreferrer">View my LinkedIn profile</a>
       </div>
     </div>
   </div>
@@ -403,7 +394,7 @@ var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 </script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module">
-// Interactive 3D viewer for AI-BOARD.step (keep the .step file in the same folder as this page)
+// Read-only interactive 3D viewer for AI-BOARD.step (keep the .step file beside this page)
 const $=id=>document.getElementById(id), V=$('viewer'), STEP='AI-BOARD.step';
 const CDN='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/';
 const WORKER=`importScripts('${CDN}occt-import-js.js');
@@ -478,19 +469,18 @@ async function show(result){
 }
 async function run(get){
   if(started)return; started=true;
-  $('vgo').hidden=$('vpick').hidden=true; $('vbar').hidden=false; bar(.02);
+  $('vgo').hidden=true; $('vbar').hidden=false; bar(.02);
   try{
     msg('Downloading the board file…'); const buf=await get();
     msg('Building the 3D model. This can take a few seconds…'); bar(.7);
     const r=await convert(buf); msg('Almost ready…'); bar(.95); await show(r);
   }catch(err){
     console.error(err); started=false; $('vbar').hidden=true;
-    msg('The 3D file could not be loaded automatically. Make sure AI-BOARD.step sits next to this page, or choose it from your computer.');
-    $('vgo').textContent='Try again'; $('vgo').hidden=$('vpick').hidden=false;
+    msg('The 3D model could not be loaded. Check that AI-BOARD.step is in the same folder as this page, then try again.');
+    $('vgo').textContent='Try again'; $('vgo').hidden=false;
   }
 }
 $('vgo').onclick=()=>run(download);
-$('vfile').onchange=e=>e.target.files[0]&&run(()=>e.target.files[0].arrayBuffer());
 new IntersectionObserver((e,ob)=>{
   if(e[0].isIntersecting){ob.disconnect(); if(innerWidth>900&&!(navigator.connection&&navigator.connection.saveData))run(download)}
 },{rootMargin:'200px'}).observe(V);
