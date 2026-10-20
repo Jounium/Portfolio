@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#061a3a">
 <meta name="description" content="Jounium YT, Electronics and Hardware Engineer. PCB design, embedded systems and AI edge hardware.">
-<title>Jounium | Electronics &amp; Hardware Engineer</title>
+<title>Jounium YT | Electronics &amp; Hardware Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -166,7 +166,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 
 /* Contact */
 .contact .box{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:52px;border:1px solid rgba(111,182,255,.35);border-radius:22px;background:linear-gradient(135deg,rgba(23,105,170,.45),rgba(6,26,58,.7));backdrop-filter:blur(10px)}
-.contact h2 span{color:var(--cyan)}
+.contact h2 span{display:block;color:var(--cyan)}
 .contact p{margin-top:14px;max-width:540px;color:var(--mutedD)}
 .acts{display:flex;flex-direction:column;gap:12px;min-width:190px}
 footer{background:#041227;color:var(--mutedD);padding:28px 0;font-size:14px}
@@ -214,10 +214,10 @@ footer a:hover{color:var(--cyan)}
     <div>
       <div class="live"><span class="dot"></span>Electronics and hardware engineering</div>
       <h1>Designing hardware.<span>Building intelligence.</span></h1>
-      <p class="lead">Turning bold ideas into intelligent hardware — engineered for performance, efficiency, and real-world impact.</p>
+      <p class="lead">I'm Jounium YT, an electronics and hardware engineer focused on PCB design, embedded systems and AI edge hardware: small, efficient devices that think where the data is.</p>
       <div class="btns">
-        <a class="btn solid" href="#projects">Explore Projects</a>
-        <a class="btn line" href="#contact">Build Your Vision</a>
+        <a class="btn solid" href="#projects">Explore my projects</a>
+        <a class="btn line" href="#contact">Get in touch</a>
       </div>
     </div>
 
@@ -262,9 +262,9 @@ footer a:hover{color:var(--cyan)}
     </div>
     <div class="txt">
       <div class="label">My approach</div>
-      <h2>From Vision to Reality <em>Engineered into Hardware.</em></h2>
-      <p>From concept to deployment, every engineering decision is driven by performance, power efficiency, and reliability.</p>
-      <p>Delivering high-quality electronic solutions tailored to your needs and built to perform.</p>
+      <h2>From circuit concepts to <em>real hardware.</em></h2>
+      <p>I care about the whole hardware process: choosing components, drawing schematics, laying out PCBs, integrating firmware and respecting the practical limits of a physical product.</p>
+      <p>My focus is thoughtful engineering, efficient power use and reliable interfaces, in designs that can be tested, understood and improved.</p>
       <div class="focus">
         <div><span>✓</span><span><b>Hardware-first thinking</b><small>Components, circuits, interfaces and constraints.</small></span></div>
         <div><span>✓</span><span><b>End-to-end development</b><small>Schematic, PCB, firmware integration and validation.</small></span></div>
@@ -331,7 +331,7 @@ footer a:hover{color:var(--cyan)}
       <div class="step"><h3>Define</h3><p>Clarify functions, interfaces, power limits, dimensions and intended use.</p></div>
       <div class="step"><h3>Design</h3><p>Choose components and develop the schematic and PCB around the requirements.</p></div>
       <div class="step"><h3>Prototype</h3><p>Inspect the board, check power rails, test interfaces and record results.</p></div>
-      <div class="step"><h3>Improve</h3><p>Use test findings to refine the design and write clear documentation.</p></div>
+      <div class="step"><h3>Deliver</h3><p>Receive a complete, reliable hardware solution, optimized for performance and ready to bring your vision to life.</p></div>
     </div>
   </div>
 </section>
@@ -340,8 +340,8 @@ footer a:hover{color:var(--cyan)}
   <div class="container">
     <div class="box">
       <div>
-        <h2>Let's drive innovation. <span>Let's change reality.</span></h2>
-        <p>Have an idea or engineering challenge? Connect with me on LinkedIn to discuss your project and explore what we can build together.</p>
+        <h2>Let's drive innovation.<span>Let's change reality.</span></h2>
+        <p>Turn bold ideas and complex engineering challenges into groundbreaking hardware solutions. Start building your vision and bring innovation to life.</p>
       </div>
       <div class="acts">
         <a class="btn solid" href="https://ma.linkedin.com/in/youness-taik-434166200" target="_blank" rel="noopener noreferrer">Chat with me on LinkedIn</a>
@@ -394,7 +394,8 @@ var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 </script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module">
-// Read-only interactive 3D viewer for AI-BOARD.step (keep the .step file beside this page)
+// Read-only 3D viewer. OWNER ONLY: the model is the AI-BOARD.step file that YOU keep beside this page.
+// To change it, replace that file on your site. Visitors can only view and rotate it; they cannot upload or open any file.
 const $=id=>document.getElementById(id), V=$('viewer'), STEP='AI-BOARD.step';
 const CDN='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/';
 const WORKER=`importScripts('${CDN}occt-import-js.js');
@@ -475,8 +476,8 @@ async function run(get){
     msg('Building the 3D model. This can take a few seconds…'); bar(.7);
     const r=await convert(buf); msg('Almost ready…'); bar(.95); await show(r);
   }catch(err){
-    console.error(err); started=false; $('vbar').hidden=true;
-    msg('The 3D model could not be loaded. Check that AI-BOARD.step is in the same folder as this page, then try again.');
+    console.error('3D model failed to load. Owner: make sure '+STEP+' is in the same folder as this page.',err); started=false; $('vbar').hidden=true;
+    msg('The 3D model is not available right now. Please try again in a moment.');
     $('vgo').textContent='Try again'; $('vgo').hidden=false;
   }
 }
