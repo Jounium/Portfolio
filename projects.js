@@ -75,4 +75,14 @@ window.PROJECTS = [
       { label: 'Show more details', url: ghp(4) },
     ],
   },
+  {
+    title: 'Project-5',
+    description: 'Project details coming soon.',
+    tags: ['Coming soon'],
+    model: '',        // example: 'models/project-4.step.gz'
+    photos: [],       // example: ['photos/project-4-a.jpg']
+    buttons: [
+      { label: 'Show more details', url: ghp(5) },
+    ],
+  },
 ];
