@@ -116,8 +116,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .pills span{padding:4px 10px;border:1px solid rgba(111,182,255,.35);border-radius:6px;font:500 12px var(--mono);color:#cfe2fb}
 
 /* Projects */
-.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
-.proj{grid-column:span 2}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
 .proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(23,105,170,.1);transition:transform .25s,box-shadow .25s}
 .proj:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(23,105,170,.2)}
 .art{position:relative;overflow:hidden;min-height:190px;display:grid;place-items:center;background:linear-gradient(rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(135deg,var(--deep),var(--navy))}
@@ -137,10 +136,7 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 
 
 /* 3D viewer */
-.proj.feature{grid-column:1/-1;display:block}
-.proj.feature .pbody{display:none}
-.proj.feature h3{font-size:26px}
-.viewer{position:relative;min-height:500px;overflow:hidden;cursor:grab;background:linear-gradient(rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,radial-gradient(circle at 50% 45%,#12418a,var(--deep) 75%)}
+.viewer{position:relative;min-height:400px;overflow:hidden;cursor:grab;background:linear-gradient(rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,radial-gradient(circle at 50% 45%,#12418a,var(--deep) 75%)}
 .viewer:active{cursor:grabbing}
 .viewer canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .viewer>i{z-index:3}
@@ -155,6 +151,23 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;ga
 .vctl{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;gap:8px}
 .vctl button{width:40px;height:40px;border-radius:10px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:700 17px var(--head);cursor:pointer;transition:background .2s}
 .vctl button:hover{background:var(--royal)}
+
+/* Project cards: photos, tabs, buttons */
+.proj .art{min-height:400px}
+.media{position:relative}
+.viewer.gal{cursor:default}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal .nv{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(111,182,255,.5);background:rgba(6,26,58,.7);color:#fff;font:700 22px var(--head);cursor:pointer}
+.gal .nv:hover{background:var(--royal)}.gal .pv{left:12px}.gal .nx{right:12px}
+.gal .dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;justify-content:center;gap:8px}
+.gal .dots b{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45)}.gal .dots b.on{background:var(--cyan)}
+.vtabs{position:absolute;top:12px;right:14px;z-index:5;display:flex;gap:6px}
+.vtabs button{padding:6px 14px;border-radius:99px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:600 13px var(--mono);cursor:pointer}
+.vtabs button.on{background:var(--royal)}
+.pbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.pb{display:inline-flex;align-items:center;padding:10px 18px;border-radius:9px;border:1.5px solid #9fbfe4;color:var(--royal);font:700 14px var(--head);transition:background .2s,transform .2s}
+.pb:hover{background:var(--ice);transform:translateY(-2px)}
+.pb.main{background:var(--royal);border-color:var(--royal);color:#fff}.pb.main:hover{background:#115388}
 
 /* Workflow */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;counter-reset:s}
@@ -180,16 +193,15 @@ footer a:hover{color:var(--cyan)}
   .contact .box{flex-direction:column;align-items:flex-start;padding:34px}
   .acts{flex-direction:row;flex-wrap:wrap}
   .links a:not(.cta){display:none}
-  .projects{grid-template-columns:1fr 1fr}.proj{grid-column:auto}
-  .proj.feature{grid-column:1/-1;grid-template-columns:1fr}
-  .viewer{min-height:420px}
+  .projects{grid-template-columns:1fr}
+  .viewer,.proj .art{min-height:380px}
 }
 @media(max-width:600px){
   section{padding:72px 0}.hero{padding-top:128px}
   .grid3,.projects,.steps{grid-template-columns:1fr}
   .tag.a{left:0}.tag.b{right:0}
   .btns .btn{width:100%}
-  .viewer{min-height:360px}.proj.feature .pbody{padding:26px}
+  .viewer,.proj .art{min-height:340px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -299,24 +311,7 @@ footer a:hover{color:var(--cyan)}
       <h2>Projects and experiments</h2>
       <p>Explore selected open-source projects to spark inspiration and transform innovative concepts into practical solutions.</p>
     </div>
-    <div class="projects">
-      <article class="proj feature">
-        <div class="viewer" id="viewer">
-          <i>Project 1 &middot; Interactive 3D</i>
-          <div class="vstate" id="vstate">
-            <p id="vmsg">Interactive 3D model of the AI board. Drag it with your mouse to rotate.</p>
-            <div class="bar" id="vbar" hidden><i id="vfill"></i></div>
-            <button class="btn solid" id="vgo" type="button">Load the 3D board</button>
-          </div>
-          <div class="vhint" id="vhint" hidden>Drag to rotate. Use + and &minus; to zoom.</div>
-          <div class="vctl" id="vctl" hidden>
-            <button id="zi" type="button" aria-label="Zoom in">+</button>
-            <button id="zo" type="button" aria-label="Zoom out">&minus;</button>
-            <button id="rs" type="button" aria-label="Reset view">&#10226;</button>
-          </div>
-        </div>
-      </article>
-    </div>
+    <div class="projects" id="projectGrid"></div>
   </div>
 </section>
 
@@ -392,25 +387,37 @@ var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
   size();draw();
 })();
 </script>
+<script src="projects.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module">
-// Read-only 3D viewer. OWNER ONLY: the model is the AI-BOARD.step file that YOU keep beside this page.
-// To change it, replace that file on your site. Visitors can only view and rotate it; they cannot upload or open any file.
-const $=id=>document.getElementById(id), V=$('viewer'), STEP='AI-BOARD.step';
+// Read-only 3D viewers and project cards.
+// OWNER ONLY: projects, photos and 3D models are listed in projects.js, a file that only YOU can change on GitHub.
+// Visitors can only look and rotate. There is no upload and no file picker anywhere on this page.
 const CDN='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/';
 const WORKER=`importScripts('${CDN}occt-import-js.js');
 onmessage=async e=>{try{const o=await occtimportjs({locateFile:n=>'${CDN}'+n});
 postMessage({ok:1,r:o.ReadStepFile(new Uint8Array(e.data),{linearUnit:'millimeter',linearDeflectionType:'bounding_box_ratio',linearDeflection:.003,angularDeflection:.6})})}
 catch(err){postMessage({ok:0,e:String(err)})}}`;
-const msg=t=>$('vmsg').textContent=t, bar=p=>$('vfill').style.width=p*100+'%';
-let started=false;
+const el=(t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
+let queue=Promise.resolve();                 // 3D models are prepared one after the other
+const later=fn=>{queue=queue.then(fn)};
 
-async function download(){
-  const res=await fetch(STEP); if(!res.ok) throw new Error('HTTP '+res.status);
-  const total=+res.headers.get('content-length')||36e6, rd=res.body.getReader(), parts=[]; let got=0;
+async function fetchModel(f,bar){
+  const r=await fetch(f); if(!r.ok)throw new Error('missing '+f);
+  const total=+r.headers.get('content-length')||8e6, rd=r.body.getReader(), parts=[]; let got=0;
   for(;;){const {done,value}=await rd.read(); if(done)break; parts.push(value); got+=value.length; bar(Math.min(.6,got/total*.6));}
-  const all=new Uint8Array(got); let o=0; for(const p of parts){all.set(p,o);o+=p.length}
-  return all.buffer;
+  let all=new Uint8Array(got), o=0; for(const p of parts){all.set(p,o); o+=p.length}
+  if(all[0]===0x1f&&all[1]===0x8b){        // gzip signature: unpack it in the browser
+    all=new Uint8Array(await new Response(new Blob([all]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+  }
+  return all;
+}
+async function download(path,bar){
+  // the small compressed copy first (name.step.gz), then the plain .step
+  for(const f of /\.gz$/i.test(path)?[path]:[path+'.gz',path]){
+    try{const all=await fetchModel(f,bar); if(new TextDecoder().decode(all.subarray(0,40)).includes('ISO-10303'))return all.buffer}catch(e){}
+  }
+  throw new Error('Model file not found, or not a STEP file: '+path);
 }
 function convert(buf){
   return new Promise((ok,no)=>{
@@ -419,72 +426,120 @@ function convert(buf){
     w.onerror=no; w.postMessage(buf,[buf]);
   });
 }
-async function show(result){
-  const THREE=await import('three'), {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
-  const ren=new THREE.WebGLRenderer({antialias:true,alpha:true});
-  ren.setPixelRatio(Math.min(devicePixelRatio,2)); V.prepend(ren.domElement);
-  const scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1,.1,1e4);
-  scene.add(new THREE.HemisphereLight(0xdbe9ff,0x10284a,1.3));
-  const key=new THREE.DirectionalLight(0xffffff,2.4); key.position.set(1,2,1.5); scene.add(key);
-  const fill=new THREE.DirectionalLight(0x6fb6ff,1.1); fill.position.set(-2,1,-1.5); scene.add(fill);
 
-  const mk=c=>new THREE.MeshStandardMaterial({color:c?new THREE.Color().setRGB(c[0],c[1],c[2],THREE.SRGBColorSpace):0x9fb4cc,metalness:.35,roughness:.5,side:THREE.DoubleSide});
-  const g=new THREE.Group();
-  for(const m of result.meshes){
-    const geo=new THREE.BufferGeometry();
-    geo.setAttribute('position',new THREE.Float32BufferAttribute(m.attributes.position.array,3));
-    m.attributes.normal?geo.setAttribute('normal',new THREE.Float32BufferAttribute(m.attributes.normal.array,3)):0;
-    geo.setIndex(m.index.array); if(!m.attributes.normal)geo.computeVertexNormals();
-    let mat=mk(m.color);
-    if(m.brep_faces&&m.brep_faces.some(f=>f.color)){
-      const list=[],seen={};
-      for(const f of m.brep_faces){const c=f.color||m.color,k=c?c.join():'d';
-        if(!(k in seen)){seen[k]=list.length;list.push(mk(c))}
-        geo.addGroup(f.first*3,(f.last-f.first+1)*3,seen[k]);}
-      mat=list;
+function make3D(p,n){
+  const pane=el('div','viewer');
+  pane.innerHTML='<i></i><div class="vstate"><p></p><div class="bar" hidden><i></i></div><button class="btn solid" type="button">Load the 3D model</button></div><div class="vhint" hidden>Drag to rotate. Use + and &minus; to zoom.</div><div class="vctl" hidden><button type="button" aria-label="Zoom in">+</button><button type="button" aria-label="Zoom out">&minus;</button><button type="button" aria-label="Reset view">&#10226;</button></div>';
+  const q=s=>pane.querySelector(s), st=q('.vstate'), msgEl=q('.vstate p'), barBox=q('.bar'), fill=q('.bar i'),
+        go=q('.vstate button'), hint=q('.vhint'), ctlBox=q('.vctl'), [zi,zo,rs]=ctlBox.querySelectorAll('button');
+  q(':scope>i').textContent='Project '+n+' \u00b7 3D';
+  const msg=t=>msgEl.textContent=t, bar=x=>fill.style.width=x*100+'%';
+  msg('Interactive 3D model. Drag it with your mouse to rotate.');
+  let busy=false;
+
+  async function show(result){
+    const THREE=await import('three'), {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
+    const ren=new THREE.WebGLRenderer({antialias:true,alpha:true});
+    ren.setPixelRatio(Math.min(devicePixelRatio,2)); pane.prepend(ren.domElement);
+    const scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1,.1,1e4);
+    scene.add(new THREE.HemisphereLight(0xdbe9ff,0x10284a,1.3));
+    const key=new THREE.DirectionalLight(0xffffff,2.4); key.position.set(1,2,1.5); scene.add(key);
+    const fillL=new THREE.DirectionalLight(0x6fb6ff,1.1); fillL.position.set(-2,1,-1.5); scene.add(fillL);
+    const mk=c=>new THREE.MeshStandardMaterial({color:c?new THREE.Color().setRGB(c[0],c[1],c[2],THREE.SRGBColorSpace):0x9fb4cc,metalness:.35,roughness:.5,side:THREE.DoubleSide});
+    const g=new THREE.Group();
+    for(const m of result.meshes){
+      const geo=new THREE.BufferGeometry();
+      geo.setAttribute('position',new THREE.Float32BufferAttribute(m.attributes.position.array,3));
+      if(m.attributes.normal)geo.setAttribute('normal',new THREE.Float32BufferAttribute(m.attributes.normal.array,3));
+      geo.setIndex(m.index.array); if(!m.attributes.normal)geo.computeVertexNormals();
+      let mat=mk(m.color);
+      if(m.brep_faces&&m.brep_faces.some(f=>f.color)){
+        const list=[],seen={};
+        for(const f of m.brep_faces){const c=f.color||m.color,k=c?c.join():'d';
+          if(!(k in seen)){seen[k]=list.length; list.push(mk(c))}
+          geo.addGroup(f.first*3,(f.last-f.first+1)*3,seen[k]);}
+        mat=list;
+      }
+      g.add(new THREE.Mesh(geo,mat));
     }
-    g.add(new THREE.Mesh(geo,mat));
+    g.rotation.x=-Math.PI/2;                 // KiCad boards are Z-up: lay the board flat
+    g.updateMatrixWorld(true);
+    const box=new THREE.Box3().setFromObject(g); g.position.sub(box.getCenter(new THREE.Vector3()));
+    scene.add(g);
+    const size=box.getSize(new THREE.Vector3()).length(), d=size*1.1, home=new THREE.Vector3(d*.55,d*.6,d*.8);
+    cam.near=size/200; cam.far=size*30; cam.position.copy(home);
+    const ctl=new OrbitControls(cam,ren.domElement);
+    ctl.enableDamping=true; ctl.enablePan=false; ctl.enableZoom=false;     // the mouse wheel keeps scrolling the page
+    ctl.minDistance=size*.35; ctl.maxDistance=size*3;
+    ctl.autoRotate=!matchMedia('(prefers-reduced-motion:reduce)').matches; ctl.autoRotateSpeed=1.4;
+    ctl.addEventListener('start',()=>ctl.autoRotate=false);               // the visitor takes control
+    const zoom=k=>{const v=cam.position.clone().sub(ctl.target).multiplyScalar(k);
+      cam.position.copy(ctl.target).add(v.setLength(THREE.MathUtils.clamp(v.length(),ctl.minDistance,ctl.maxDistance)))};
+    zi.onclick=()=>zoom(.8); zo.onclick=()=>zoom(1.25);
+    rs.onclick=()=>{cam.position.copy(home); ctl.target.set(0,0,0)};
+    new ResizeObserver(()=>{const w=pane.clientWidth,h=pane.clientHeight; if(!w||!h)return; ren.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix()}).observe(pane);
+    let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(pane);
+    (function loop(){requestAnimationFrame(loop); if(vis){ctl.update(); ren.render(scene,cam)}})();
+    st.classList.add('off'); hint.hidden=ctlBox.hidden=false;
   }
-  g.rotation.x=-Math.PI/2;            // KiCad boards are Z-up: lay the board flat
-  g.updateMatrixWorld(true);
-  const box=new THREE.Box3().setFromObject(g); g.position.sub(box.getCenter(new THREE.Vector3()));
-  scene.add(g);
-  const size=box.getSize(new THREE.Vector3()).length(), d=size*1.1, home=new THREE.Vector3(d*.55,d*.6,d*.8);
-  cam.near=size/200; cam.far=size*30; cam.position.copy(home);
-
-  const ctl=new OrbitControls(cam,ren.domElement);
-  ctl.enableDamping=true; ctl.enablePan=false; ctl.enableZoom=false;   // wheel keeps scrolling the page
-  ctl.minDistance=size*.35; ctl.maxDistance=size*3;
-  ctl.autoRotate=!matchMedia('(prefers-reduced-motion:reduce)').matches; ctl.autoRotateSpeed=1.4;
-  ctl.addEventListener('start',()=>ctl.autoRotate=false);             // the visitor takes control
-
-  const zoom=k=>{const v=cam.position.clone().sub(ctl.target).multiplyScalar(k);
-    cam.position.copy(ctl.target).add(v.setLength(THREE.MathUtils.clamp(v.length(),ctl.minDistance,ctl.maxDistance)))};
-  $('zi').onclick=()=>zoom(.8); $('zo').onclick=()=>zoom(1.25);
-  $('rs').onclick=()=>{cam.position.copy(home);ctl.target.set(0,0,0)};
-
-  new ResizeObserver(()=>{const w=V.clientWidth,h=V.clientHeight; ren.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix()}).observe(V);
-  let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(V);
-  (function loop(){requestAnimationFrame(loop); if(vis){ctl.update();ren.render(scene,cam)}})();
-  $('vstate').classList.add('off'); $('vhint').hidden=$('vctl').hidden=false;
-}
-async function run(get){
-  if(started)return; started=true;
-  $('vgo').hidden=true; $('vbar').hidden=false; bar(.02);
-  try{
-    msg('Downloading the board file…'); const buf=await get();
-    msg('Building the 3D model. This can take a few seconds…'); bar(.7);
-    const r=await convert(buf); msg('Almost ready…'); bar(.95); await show(r);
-  }catch(err){
-    console.error('3D model failed to load. Owner: make sure '+STEP+' is in the same folder as this page.',err); started=false; $('vbar').hidden=true;
-    msg('The 3D model is not available right now. Please try again in a moment.');
-    $('vgo').textContent='Try again'; $('vgo').hidden=false;
+  async function run(){
+    barBox.hidden=false; bar(.02);
+    try{
+      msg('Downloading the model\u2026'); const buf=await download(p.model,bar);
+      msg('Building the 3D model. This can take a few seconds\u2026'); bar(.7);
+      const r=await convert(buf); msg('Almost ready\u2026'); bar(.95); await show(r);
+    }catch(err){
+      console.error('3D model failed for "'+(p.title||'project '+n)+'". Owner: check the file name in projects.js and that the file is uploaded.',err);
+      busy=false; barBox.hidden=true; msg('The 3D model is not available right now. Please try again in a moment.');
+      go.textContent='Try again'; go.hidden=false;
+    }
   }
+  const start=()=>{if(busy)return; busy=true; go.hidden=true; barBox.hidden=false; msg('Preparing the 3D model\u2026'); later(run)};
+  go.onclick=start;
+  new IntersectionObserver((e,ob)=>{
+    if(e[0].isIntersecting){ob.disconnect(); if(innerWidth>900&&!(navigator.connection&&navigator.connection.saveData))start()}
+  },{rootMargin:'200px'}).observe(pane);
+  return pane;
 }
-$('vgo').onclick=()=>run(download);
-new IntersectionObserver((e,ob)=>{
-  if(e[0].isIntersecting){ob.disconnect(); if(innerWidth>900&&!(navigator.connection&&navigator.connection.saveData))run(download)}
-},{rootMargin:'200px'}).observe(V);
+
+function makeGallery(p,n){
+  const g=el('div','viewer gal'), tag=el('i','','Project '+n+' \u00b7 Photos'); g.append(tag);
+  const imgs=p.photos.map((src,k)=>{const im=el('img'); im.src=src; im.alt=(p.title||'Project '+n)+' photo '+(k+1); im.loading='lazy'; im.hidden=k>0; g.append(im); return im});
+  if(imgs.length>1){
+    const dots=el('div','dots'), ds=imgs.map((_,k)=>{const b=el('b',k?'':'on'); dots.append(b); return b});
+    let k=0; const move=d=>{imgs[k].hidden=true; ds[k].className=''; k=(k+d+imgs.length)%imgs.length; imgs[k].hidden=false; ds[k].className='on'};
+    const pv=el('button','nv pv','\u2039'), nx=el('button','nv nx','\u203a');
+    pv.type=nx.type='button'; pv.ariaLabel='Previous photo'; nx.ariaLabel='Next photo';
+    pv.onclick=()=>move(-1); nx.onclick=()=>move(1); g.append(pv,nx,dots);
+  }
+  return g;
+}
+function makeArt(p,n){
+  const a=el('div','art'); a.append(el('i','','Project '+n), el('div','chip',p.chip||'PCB')); return a;
+}
+
+const grid=document.getElementById('projectGrid'), LIST=Array.isArray(window.PROJECTS)?window.PROJECTS:[];
+if(!LIST.length)grid.append(el('p','','Projects coming soon.'));
+LIST.forEach((p,i)=>{
+  const n=i+1, card=el('article','proj'), media=el('div','media');
+  const has3=!!p.model, hasPh=Array.isArray(p.photos)&&p.photos.length>0;
+  const pane3=has3?make3D(p,n):null, gal=hasPh?makeGallery(p,n):null;
+  if(pane3)media.append(pane3);
+  if(gal){gal.hidden=has3; media.append(gal)}
+  if(!has3&&!hasPh)media.append(makeArt(p,n));
+  if(has3&&hasPh){                           // both: small tabs to switch between 3D and photos
+    const tabs=el('div','vtabs'), b3=el('button','on','3D'), bp=el('button','','Photos'); b3.type=bp.type='button';
+    b3.onclick=()=>{pane3.hidden=false; gal.hidden=true; b3.className='on'; bp.className=''};
+    bp.onclick=()=>{pane3.hidden=true; gal.hidden=false; bp.className='on'; b3.className=''};
+    tabs.append(b3,bp); media.append(tabs);
+  }
+  const body=el('div','pbody'); body.append(el('h3','',p.title||'Project-'+n), el('p','',p.description||''));
+  if(Array.isArray(p.tags)&&p.tags.length){const t=el('div','pills'); p.tags.forEach(x=>t.append(el('span','',x))); body.append(t)}
+  const btns=el('div','pbtns');
+  (p.buttons||[]).forEach((b,k)=>{const a=el('a',k?'pb':'pb main',b.label); a.href=b.url; a.target='_blank'; a.rel='noopener noreferrer'; btns.append(a)});
+  if(btns.children.length)body.append(btns);
+  card.append(media,body); grid.append(card);
+});
 </script>
 </body>
 </html>
