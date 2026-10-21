@@ -11,58 +11,68 @@
       and change the text and the file names. Keep the comma after each block.
    3. Commit. The new project appears on the site 1 or 2 minutes later.
 
-   FILES (names are case sensitive, no spaces):
-   model   : a STEP file. Best is the compressed copy: project-2.step.gz
-             (a plain project-2.step also works). Leave '' if no 3D model.
-   photos  : list of photos, e.g. ['project-2-a.jpg', 'project-2-b.jpg']
+   FOLDERS next to index.html (names are case sensitive, no spaces):
+     models/  the 3D files, compressed:  models/project-2.step.gz
+              (a plain .step also works, but .gz is 6x smaller)
+     photos/  the pictures:              photos/project-2-a.jpg
+     files/   PDFs for the buttons:      files/project-2-schematic.pdf
+   The path written below must match the real file name EXACTLY.
+
+   "Show more details" opens your GitHub PROJECT page: ghp(1) = the project
+   whose address ends with /projects/1. Check the number in your browser
+   address bar when you open the project on GitHub. The project must be PUBLIC.
+
+   model   : path of the 3D file. Leave '' if the project has no 3D model.
+   photos  : list of pictures. Leave [] if none.
    buttons : buttons shown under the project. The first one is the big
-             blue button. Add as many as you like (Schematic, PCB, Code...).
+             blue button. Add as many as you like (Schematic, Code...).
    ===================================================================== */
 
-const GITHUB_USER = 'Jounium';   // <- write your GitHub username here, once
-const gh = repo => 'https://github.com/' + GITHUB_USER + '/' + repo;
+const GITHUB_USER = 'Jounium';                 // your GitHub username
+const gh  = repo => 'https://github.com/' + GITHUB_USER + '/' + repo;                 // a repository
+const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + num;  // a GitHub PROJECT (the Projects tab)
 
 window.PROJECTS = [
   {
     title: 'Project-1',
-    description: 'ProdTrack, an edge AI hardware board designed in KiCad. Drag the 3D model to inspect every side of the board.',
+    description: 'AI-BOARD, an edge AI hardware board designed in KiCad. Drag the 3D model to inspect every side of the board.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
-    model: 'AI-BOARD.step.gz',
+    model: 'models/AI-BOARD.step.gz',
     photos: [],
     buttons: [
-      { label: 'Show more details', url: gh('project-1') },
+      { label: 'Show more details', url: ghp(1) },
       // { label: 'Project files', url: gh('project-1') },
-      // { label: 'Schematic',     url: 'project-1-schematic.pdf' },
+      // { label: 'Schematic',     url: 'files/project-1-schematic.pdf' },
     ],
   },
   {
     title: 'Project-2',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',        // example: 'project-2.step.gz'
-    photos: [],       // example: ['project-2-a.jpg', 'project-2-b.jpg']
+    model: '',        // example: 'models/project-2.step.gz'
+    photos: [],       // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
     buttons: [
-      { label: 'Show more details', url: gh('project-2') },
+      { label: 'Show more details', url: ghp(2) },
     ],
   },
   {
     title: 'Project-3',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',
-    photos: [],
+    model: '',        // example: 'models/project-3.step.gz'
+    photos: [],       // example: ['photos/project-3-a.jpg']
     buttons: [
-      { label: 'Show more details', url: gh('project-3') },
+      { label: 'Show more details', url: ghp(3) },
     ],
   },
   {
     title: 'Project-4',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',
-    photos: [],
+    model: '',        // example: 'models/project-4.step.gz'
+    photos: [],       // example: ['photos/project-4-a.jpg']
     buttons: [
-      { label: 'Show more details', url: gh('project-4') },
+      { label: 'Show more details', url: ghp(4) },
     ],
   },
 ];
