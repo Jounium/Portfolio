@@ -54,7 +54,11 @@ window.PROJECTS = [
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
     model: 'Models/Project-2.gz',        // example: 'models/project-2.step.gz'
-    photos: [],       // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
+    photos: ['Photos/Project-2-01.png',
+             'Photos/Project-2-02.png',
+             'Photos/Project-2-03.png',
+             'Photos/Project-2-04.png',
+            ],     // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(2) },
     ],
@@ -64,7 +68,11 @@ window.PROJECTS = [
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
     model: 'Models/Project-3.gz',        // example: 'models/project-3.step.gz'
-    photos: [],       // example: ['photos/project-3-a.jpg']
+    photos: ['Photos/Project-3-01.png',
+             'Photos/Project-3-02.png',
+             'Photos/Project-3-03.png',
+             'Photos/Project-3-04.png',
+            ],       // example: ['photos/project-3-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(3) },
     ],
@@ -74,7 +82,11 @@ window.PROJECTS = [
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
     model: 'Models/Project-4.gz',        // example: 'models/project-4.step.gz'
-    photos: [],       // example: ['photos/project-4-a.jpg']
+    photos: ['Photos/Project-4-01.png',
+             'Photos/Project-4-02.png',
+             'Photos/Project-4-03.png',
+             'Photos/Project-4-04.png',
+            ],       // example: ['photos/project-4-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(4) },
     ],
@@ -84,7 +96,11 @@ window.PROJECTS = [
   description: '...',
   tags: ['PCB'],
   model: 'Models/project-5.step.gz',   // wla ''
-  photos: [],
+    photos: ['Photos/Project-5-01.png',
+             'Photos/Project-5-02.png',
+             'Photos/Project-5-03.png',
+             'Photos/Project-5-04.png',
+            ],
   buttons: [{ label: 'Show more details', url: ghp(5) }],
 },
 ];
