@@ -42,7 +42,7 @@ window.PROJECTS = [
              'Photos/Project-1-02.jpg',
              'Photos/Project-1-03.jpg',
              'Photos/Project-1-04.jpg',
-            ]
+            ],
     buttons: [
       { label: 'Show more details', url: ghp(1) },
       // { label: 'Project files', url: gh('project-1') },
@@ -53,7 +53,7 @@ window.PROJECTS = [
     title: 'Project-2',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: ''Models/Project-2.gz',        // example: 'models/project-2.step.gz'
+    model: 'Models/Project-2.gz',        // example: 'models/project-2.step.gz'
     photos: [],       // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(2) },
@@ -63,7 +63,7 @@ window.PROJECTS = [
     title: 'Project-3',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: ''Models/Project-3.gz',        // example: 'models/project-3.step.gz'
+    model: 'Models/Project-3.gz',        // example: 'models/project-3.step.gz'
     photos: [],       // example: ['photos/project-3-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(3) },
@@ -73,7 +73,7 @@ window.PROJECTS = [
     title: 'Project-4',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: ''Models/Project-4.gz',        // example: 'models/project-4.step.gz'
+    model: 'Models/Project-4.gz',        // example: 'models/project-4.step.gz'
     photos: [],       // example: ['photos/project-4-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(4) },
