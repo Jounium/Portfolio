@@ -35,7 +35,7 @@ const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + n
 window.PROJECTS = [
   {
     title: 'Project-1',
-    description: 'AI-BOARD, an edge AI hardware board designed in KiCad. Drag the 3D model to inspect every side of the board.',
+     description: 'A custom PCB for real-time production tracking, integrating an ESP32, a touchscreen interface, and an RFID reader. The board enables RFID identification, operator input, and production event reporting from the workstation to a monitoring system.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
     model: 'Models/Project-1.gz',
     photos: ['Photos/Project-1-01.png',
