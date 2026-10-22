@@ -38,7 +38,11 @@ window.PROJECTS = [
     description: 'AI-BOARD, an edge AI hardware board designed in KiCad. Drag the 3D model to inspect every side of the board.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
     model: 'Models/Project-1.gz',
-    photos: ['Photos/Project-1-01.png', 'Photos/Project-1-02.jpg', 'Photos/Project-1-03.jpg', 'Photos/Project-1-04.jpg', 'Photos/Project-1-05.jpg', 'Photos/Project-1-06.jpg', 'Photos/Project-1-04.jpg'],
+    photos: ['Photos/Project-1-01.png',
+             'Photos/Project-1-02.jpg',
+             'Photos/Project-1-03.jpg',
+             'Photos/Project-1-04.jpg',
+            ]
     buttons: [
       { label: 'Show more details', url: ghp(1) },
       // { label: 'Project files', url: gh('project-1') },
