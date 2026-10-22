@@ -37,7 +37,7 @@ window.PROJECTS = [
     title: 'Project-1',
      description: 'A custom PCB for real-time production tracking, integrating an ESP32, a touchscreen interface, and an RFID reader. The board enables RFID identification, operator input, and production event reporting from the workstation to a monitoring system.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
-    model: 'Models/Project-1.gz',
+    model: 'Models/Project-1.glb',
     photos: ['Photos/Project-1-01.png',
              'Photos/Project-1-02.png',
              'Photos/Project-1-03.png',
