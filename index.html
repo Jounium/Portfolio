@@ -504,7 +504,7 @@ function make3D(p,n){
 
 function makeGallery(p,n){
   const g=el('div','viewer gal'), tag=el('i','','Project '+n+' \u00b7 Photos'); g.append(tag);
-  const imgs=p.photos.map((src,k)=>{const im=el('img'); im.src=src; im.alt=(p.title||'Project '+n)+' photo '+(k+1); im.loading='lazy'; im.hidden=k>0; g.append(im); return im});
+  const imgs=p.photos.map((src,k)=>{const im=el('img'); im.src=src; im.alt=(p.title||'Project '+n)+' photo '+(k+1); im.loading='eager'; im.hidden=k>0; g.append(im); return im});
   if(imgs.length>1){
     const dots=el('div','dots'), ds=imgs.map((_,k)=>{const b=el('b',k?'':'on'); dots.append(b); return b});
     let k=0; const move=d=>{imgs[k].hidden=true; ds[k].className=''; k=(k+d+imgs.length)%imgs.length; imgs[k].hidden=false; ds[k].className='on'};
