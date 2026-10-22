@@ -37,7 +37,7 @@ window.PROJECTS = [
     title: 'Project-1',
     description: 'AI-BOARD, an edge AI hardware board designed in KiCad. Drag the 3D model to inspect every side of the board.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
-    model: 'models/Project-1.gz',
+    model: 'Models/Project-1.gz',
     photos: ['Photos/Project-1-01.jpg'],
     buttons: [
       { label: 'Show more details', url: ghp(1) },
@@ -49,7 +49,7 @@ window.PROJECTS = [
     title: 'Project-2',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',        // example: 'models/project-2.step.gz'
+    model: ''Models/Project-2.gz',        // example: 'models/project-2.step.gz'
     photos: [],       // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(2) },
@@ -59,7 +59,7 @@ window.PROJECTS = [
     title: 'Project-3',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',        // example: 'models/project-3.step.gz'
+    model: ''Models/Project-3.gz',        // example: 'models/project-3.step.gz'
     photos: [],       // example: ['photos/project-3-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(3) },
@@ -69,7 +69,7 @@ window.PROJECTS = [
     title: 'Project-4',
     description: 'Project details coming soon.',
     tags: ['Coming soon'],
-    model: '',        // example: 'models/project-4.step.gz'
+    model: ''Models/Project-4.gz',        // example: 'models/project-4.step.gz'
     photos: [],       // example: ['photos/project-4-a.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(4) },
@@ -79,7 +79,7 @@ window.PROJECTS = [
   title: 'Project-5',
   description: '...',
   tags: ['PCB'],
-  model: 'models/project-5.step.gz',   // wla ''
+  model: 'Models/project-5.step.gz',   // wla ''
   photos: [],
   buttons: [{ label: 'Show more details', url: ghp(5) }],
 },
