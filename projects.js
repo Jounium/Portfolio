@@ -39,9 +39,9 @@ window.PROJECTS = [
     tags: ['KiCad', 'PCB', 'Edge AI'],
     model: 'Models/Project-1.gz',
     photos: ['Photos/Project-1-01.png',
-             'Photos/Project-1-02.jpg',
-             'Photos/Project-1-03.jpg',
-             'Photos/Project-1-04.jpg',
+             'Photos/Project-1-02.png',
+             'Photos/Project-1-03.png',
+             'Photos/Project-1-04.png',
             ],
     buttons: [
       { label: 'Show more details', url: ghp(1) },
