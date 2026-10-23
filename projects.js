@@ -33,7 +33,6 @@ const gh  = repo => 'https://github.com/' + GITHUB_USER + '/' + repo;           
 const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + num;  // a GitHub PROJECT (the Projects tab)
 
 window.PROJECTS = [
-   window.PROJECTS = [
   {
     title: 'Next Product',
     description: 'Product description.',
@@ -42,9 +41,6 @@ window.PROJECTS = [
     photos: [],
     buttons: [],
   },
-
-  // Les anciens projets restent en dessous.
-];
   {
     title: 'ProdTrack Touch',
     description: 'A production tracking PCB combining RFID identification and a touchscreen for recording production events, capturing operator input, and monitoring progress in real time.',
