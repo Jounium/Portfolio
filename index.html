@@ -293,14 +293,7 @@ footer a:hover{color:var(--cyan)}
       <h2>Technical expertise</h2>
       <p>Core areas across electronics, board-level engineering and embedded intelligence.</p>
     </div>
-    <div class="grid3">
-      <article class="card"><div class="ic">⌘</div><h3>PCB design and development</h3><p>Schematic capture, component selection, layout and preparation for fabrication.</p><div class="pills"><span>KiCad</span><span>Layout</span><span>DFM</span></div></article>
-      <article class="card"><div class="ic">⌁</div><h3>Electronics engineering</h3><p>Digital and analog circuits, power distribution, protection and hardware interfaces.</p><div class="pills"><span>Power</span><span>USB-C</span><span>Protection</span></div></article>
-      <article class="card"><div class="ic">μ</div><h3>Embedded systems</h3><p>Microcontroller designs, peripheral integration and firmware-oriented hardware.</p><div class="pills"><span>ESP32</span><span>SPI / I²C</span><span>GPIO</span></div></article>
-      <article class="card"><div class="ic">↯</div><h3>Power and battery systems</h3><p>Power-path concepts, voltage regulation and efficient battery-powered design.</p><div class="pills"><span>DC-DC</span><span>Battery</span><span>Low power</span></div></article>
-      <article class="card"><div class="ic">AI</div><h3>AI edge hardware</h3><p>Hardware platforms for local inference, compact intelligent devices and edge computing.</p><div class="pills"><span>Edge AI</span><span>Inference</span><span>Optimization</span></div></article>
-      <article class="card"><div class="ic">◎</div><h3>Prototyping and validation</h3><p>3D board inspection, enclosure constraints, interface checks and structured testing.</p><div class="pills"><span>3D CAD</span><span>Testing</span><span>Debugging</span></div></article>
-    </div>
+    <div class="grid3" id="expertiseGrid"></div>
   </div>
 </section>
 
@@ -555,6 +548,36 @@ LIST.forEach((p,i)=>{
   if(btns.children.length)body.append(btns);
   card.append(media,body); grid.append(card);
 });
+</script>
+<script src="expertise.js"></script>
+<script>
+(() => {
+  const grid = document.getElementById('expertiseGrid');
+  if (!grid) return;
+  const icons = ['⌁', '⌘', 'μ', '↯', 'AI', '◎'];
+  const items = Array.isArray(window.EXPERTISE) ? window.EXPERTISE : [];
+  grid.replaceChildren();
+  items.forEach((item, index) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    const icon = document.createElement('div');
+    icon.className = 'ic';
+    icon.textContent = icons[index % icons.length];
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const description = document.createElement('p');
+    description.textContent = item.description;
+    const tags = document.createElement('div');
+    tags.className = 'pills';
+    (item.tags || []).forEach(label => {
+      const tag = document.createElement('span');
+      tag.textContent = label;
+      tags.append(tag);
+    });
+    card.append(icon, title, description, tags);
+    grid.append(card);
+  });
+})();
 </script>
 </body>
 </html>
