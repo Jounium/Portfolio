@@ -539,13 +539,14 @@ LIST.forEach((p,i)=>{
   const has3=!!p.model, hasPh=Array.isArray(p.photos)&&p.photos.length>0;
   const pane3=has3?make3D(p,n):null, gal=hasPh?makeGallery(p,n):null;
   if(pane3)media.append(pane3);
-  if(gal){gal.hidden=has3; media.append(gal)}
+  if(gal)media.append(gal);
+  if(pane3&&gal)pane3.hidden=true;           // photos first; the 3D model opens only when the visitor clicks "3D"
   if(!has3&&!hasPh)media.append(makeArt(p,n));
-  if(has3&&hasPh){                           // both: small tabs to switch between 3D and photos
-    const tabs=el('div','vtabs'), b3=el('button','on','3D'), bp=el('button','','Photos'); b3.type=bp.type='button';
-    b3.onclick=()=>{pane3.hidden=false; gal.hidden=true; b3.className='on'; bp.className=''};
-    bp.onclick=()=>{pane3.hidden=true; gal.hidden=false; bp.className='on'; b3.className=''};
-    tabs.append(b3,bp); media.append(tabs);
+  if(has3&&hasPh){                           // both: small tabs to switch between photos and 3D
+    const tabs=el('div','vtabs'), bp=el('button','on','Photos'), b3=el('button','','3D'); bp.type=b3.type='button';
+    bp.onclick=()=>{gal.hidden=false; pane3.hidden=true; bp.className='on'; b3.className=''};
+    b3.onclick=()=>{gal.hidden=true; pane3.hidden=false; b3.className='on'; bp.className=''};
+    tabs.append(bp,b3); media.append(tabs);
   }
   const body=el('div','pbody'); body.append(el('h3','',p.title||'Project-'+n), el('p','',p.description||''));
   if(Array.isArray(p.tags)&&p.tags.length){const t=el('div','pills'); p.tags.forEach(x=>t.append(el('span','',x))); body.append(t)}
