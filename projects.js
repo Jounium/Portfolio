@@ -65,6 +65,18 @@ window.PROJECTS = [
       // { label: 'Schematic',     url: 'files/project-1-schematic.pdf' },
     ],
   },
+{
+  title: 'FlashBridge',
+  description: 'A USB-to-UART programmer supporting 3.3 V and 5 V logic, with automatic reset and manual boot/reset controls. Centralizing programming circuitry reduces component count and manufacturing cost on compatible target boards.',
+  tags: ['USB-to-UART', '3.3V / 5V Logic', 'Auto Reset', 'MCU Programming'],
+  model: 'Models/project-5.step.gz',   // wla ''
+    photos: ['Photos/Project-5-01.png',
+             'Photos/Project-5-02.png',
+             'Photos/Project-5-03.png',
+             'Photos/Project-5-04.png',
+            ],
+  buttons: [{ label: 'Show more details', url: ghp(5) }],
+},
   {
     title: 'ProdTrack Node',
     description: 'A compact production tracking PCB with LED indicators and connectors for an external RFID reader and button, supporting real-time event capture and flexible workstation integration.',
@@ -107,16 +119,4 @@ window.PROJECTS = [
       { label: 'Show more details', url: ghp(4) },
     ],
   },
- {
-  title: 'FlashBridge',
-  description: 'A USB-to-UART programmer supporting 3.3 V and 5 V logic, with automatic reset and manual boot/reset controls. Centralizing programming circuitry reduces component count and manufacturing cost on compatible target boards.',
-  tags: ['USB-to-UART', '3.3V / 5V Logic', 'Auto Reset', 'MCU Programming'],
-  model: 'Models/project-5.step.gz',   // wla ''
-    photos: ['Photos/Project-5-01.png',
-             'Photos/Project-5-02.png',
-             'Photos/Project-5-03.png',
-             'Photos/Project-5-04.png',
-            ],
-  buttons: [{ label: 'Show more details', url: ghp(5) }],
-},
 ];
