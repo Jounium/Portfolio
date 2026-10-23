@@ -34,8 +34,8 @@ const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + n
 
 window.PROJECTS = [
   {
-    title: 'Project-1',
-     description: 'A custom PCB for real-time production tracking, integrating an ESP32, a touchscreen interface, and an RFID reader. The board enables RFID identification, operator input, and production event reporting from the workstation to a monitoring system.',
+    title: 'TouchTrack | RFID Production Terminal',
+    description: 'A custom PCB combining RFID identification and a touchscreen interface for real-time production tracking. Designed to capture production events and operator input directly at the workstation, providing visibility into production progress.',
     tags: ['KiCad', 'PCB', 'Edge AI'],
     model: 'Models/Project-1.glb',
     photos: ['Photos/Project-1-01.png',
