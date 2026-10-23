@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061a3a">
+<meta name="description" content="Jounium YT, Electronics and Hardware Engineer. PCB design, embedded systems and AI edge hardware.">
+<title>Jounium YAIoT | Electronics &amp; Hardware Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#061a3a; --navy:#0a2a57; --royal:#1769aa; --blue:#2f8cff; --sky:#6fb6ff; --cyan:#5fe3f2;
+  --ice:#eaf3ff; --paper:#f6faff; --ink:#0b2447; --soft:#4a6283; --line:#cfe0f5; --mutedD:#aac0de;
+  --head:'Sora','Segoe UI',Arial,sans-serif; --body:'Manrope','Segoe UI',Arial,sans-serif; --mono:'DM Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);font-size:17px;line-height:1.7;color:var(--ink);background:var(--deep);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.container{width:min(1140px,calc(100% - 44px));margin:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4vw,44px)}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+section{padding:104px 0}
+.label{display:flex;align-items:center;gap:12px;font:500 14px var(--mono);color:var(--royal);margin-bottom:16px}
+.label::before{content:"";width:28px;height:2px;background:currentColor}
+.dark .label,.hero .label{color:var(--cyan)}
+.head{max-width:680px;margin-bottom:54px}
+.head p{margin-top:16px;color:var(--soft)}
+.dark .head p{color:var(--mutedD)}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(6,26,58,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(111,182,255,.18)}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font:700 16px var(--head)}
+.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--deep);font:800 15px var(--mono)}
+.brand small{display:block;font:400 12px var(--mono);color:var(--mutedD)}
+.links{display:flex;align-items:center;gap:30px}
+.links a{color:var(--mutedD);font-size:15px;font-weight:600;transition:color .2s}
+.links a:hover{color:#fff}
+.links .cta{color:var(--deep);background:var(--sky);padding:10px 20px;border-radius:9px}
+.links .cta:hover{background:var(--cyan)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:10px;font:700 15px var(--head);transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--sky);color:var(--deep)}
+.btn.solid:hover{background:var(--cyan)}
+.btn.line{border:1.5px solid #4d7fbb;color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.08)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;padding:160px 0 110px;background:radial-gradient(800px 480px at 82% 38%,rgba(47,140,255,.32),transparent 70%)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:drift 14s ease-in-out infinite alternate}
+.o1{width:360px;height:360px;background:#1a5fd1;left:-120px;top:20%}
+.o2{width:300px;height:300px;background:#12b5d6;right:6%;bottom:-120px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(80px,-50px) scale(1.2)}}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.live{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid rgba(111,182,255,.35);border-radius:99px;font:500 13px var(--mono);color:var(--mutedD);background:rgba(10,42,87,.5);margin-bottom:26px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(95,227,242,.7);animation:ping 2s infinite}
+@keyframes ping{to{box-shadow:0 0 0 12px rgba(95,227,242,0)}}
+.hero h1{font-size:clamp(40px,5.6vw,74px);font-weight:800}
+.hero h1 span{display:block;background:linear-gradient(90deg,var(--sky),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:24px 0 34px;font-size:19px;color:var(--mutedD);max-width:32em}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+
+/* Hero board */
+.board{position:relative}
+.board svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 70px rgba(0,10,40,.7))}
+.t{fill:none;stroke:#2f78cf;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.f{fill:none;stroke:#aee3ff;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:14 110;animation:flow 3.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-124}}
+.pad{fill:#0a2a57;stroke:var(--sky);stroke-width:2.5}
+.node{fill:var(--sky);animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{50%{opacity:.35;transform:scale(1.5)}}
+.tag{position:absolute;background:#fff;color:var(--ink);padding:10px 16px;border-radius:12px;font:700 14px/1.35 var(--head);box-shadow:0 14px 34px rgba(0,10,40,.45);animation:float 6s ease-in-out infinite}
+.tag small{display:block;font:500 13px var(--body);color:var(--soft)}
+.tag.a{left:-12px;top:10%}
+.tag.b{right:-8px;bottom:8%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* Ticker */
+.ticker{overflow:hidden;background:var(--ice);border-block:1px solid var(--line);padding:18px 0;position:relative;z-index:1}
+.track{display:flex;gap:14px;width:max-content;animation:scroll 40s linear infinite}
+.track span{padding:7px 18px;border:1.5px solid #b7d0ee;border-radius:99px;background:#fff;color:var(--royal);font:500 14px var(--mono);white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Light sections */
+.light{background:rgba(246,250,255,.95)}
+.ice{background:rgba(234,243,255,.96)}
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+.id{padding:34px;border-radius:18px;color:#fff;background:linear-gradient(150deg,var(--navy),var(--royal));box-shadow:0 24px 50px rgba(23,105,170,.3)}
+.id .mono{display:grid;place-items:center;width:68px;height:68px;border-radius:16px;background:rgba(255,255,255,.14);color:var(--cyan);font:800 22px var(--mono);margin-bottom:24px}
+.id h3{font-size:23px}
+.id p{margin-top:14px;color:#cfe2fb;font-size:16px}
+.about h2 em{font-style:normal;color:var(--royal)}
+.about .txt p{margin-top:18px;color:var(--soft)}
+.focus{display:grid;gap:16px;margin-top:28px}
+.focus div{display:flex;gap:14px;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;background:#fff}
+.focus b{display:block;font:700 16px var(--head)}
+.focus small{color:var(--soft);font-size:15px}
+
+/* Expertise (deep blue) */
+.dark{color:#fff;background:linear-gradient(180deg,rgba(6,26,58,.8),rgba(10,42,87,.88))}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:28px 26px;border:1px solid rgba(111,182,255,.25);border-radius:14px;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);transition:border-color .25s,transform .25s,background .25s}
+.card:hover{border-color:var(--sky);transform:translateY(-5px);background:rgba(255,255,255,.09)}
+.card .ic{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:rgba(95,227,242,.14);color:var(--cyan);font:500 19px var(--mono);margin-bottom:22px}
+.card h3{font-size:19px}
+.card p{margin-top:12px;color:var(--mutedD);font-size:15.5px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pills span{padding:4px 10px;border:1px solid rgba(111,182,255,.35);border-radius:6px;font:500 12px var(--mono);color:#cfe2fb}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(23,105,170,.1);transition:transform .25s,box-shadow .25s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(23,105,170,.2)}
+.art{position:relative;overflow:hidden;min-height:190px;display:grid;place-items:center;background:linear-gradient(rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(90deg,rgba(111,182,255,.1) 1px,transparent 1px) 0 0/22px 22px,linear-gradient(135deg,var(--deep),var(--navy))}
+.art::after{content:"";position:absolute;top:0;bottom:0;width:70px;left:-80px;background:linear-gradient(90deg,transparent,rgba(95,227,242,.28),transparent);animation:sweep 4.5s ease-in-out infinite}
+@keyframes sweep{to{left:110%}}
+.chip{position:relative;display:grid;place-items:center;width:104px;height:104px;border:2px solid var(--sky);border-radius:14px;background:linear-gradient(140deg,#14407a,#081c3a);color:var(--cyan);font:500 14px var(--mono)}
+.chip::before{content:"";position:absolute;inset:-22px;border:1.5px dashed rgba(111,182,255,.55);border-radius:22px;animation:ring 3s ease-in-out infinite}
+@keyframes ring{50%{transform:scale(1.14);opacity:.4}}
+.art i,.viewer>i{position:absolute;left:16px;top:12px;font:400 12px var(--mono);color:#8fb3de;font-style:normal}
+.pbody{padding:26px}
+.pbody h3{font-size:20px}
+.pbody p{margin-top:10px;color:var(--soft);font-size:15.5px}
+.pbody .pills span{border-color:var(--line);color:var(--royal);background:var(--paper)}
+.pfoot{display:flex;justify-content:space-between;gap:10px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font:500 12px var(--mono);color:var(--soft)}
+.pfoot a{color:var(--royal);font-weight:700}
+.note{margin-top:24px;padding:16px 20px;border:1.5px dashed #9fbfe4;border-radius:10px;color:var(--soft);font-size:15px;background:rgba(255,255,255,.6)}
+
+
+/* 3D viewer */
+.viewer{position:relative;min-height:400px;overflow:hidden;cursor:grab;background:linear-gradient(rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(111,182,255,.08) 1px,transparent 1px) 0 0/26px 26px,radial-gradient(circle at 50% 45%,#12418a,var(--deep) 75%)}
+.viewer:active{cursor:grabbing}
+.viewer canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.viewer>i{z-index:3}
+[hidden]{display:none!important}
+.vstate{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:16px;padding:24px;text-align:center;color:#cfe2fb;transition:opacity .5s}
+.vstate.off{opacity:0;pointer-events:none}
+.vstate p{max-width:28em;font-size:15.5px}
+.bar{width:230px;height:6px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .3s}
+.vstate .btn{cursor:pointer}
+.vhint{position:absolute;left:16px;bottom:16px;z-index:3;font:500 12px var(--mono);color:#aac0de;pointer-events:none}
+.vctl{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;gap:8px}
+.vctl button{width:40px;height:40px;border-radius:10px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:700 17px var(--head);cursor:pointer;transition:background .2s}
+.vctl button:hover{background:var(--royal)}
+
+/* Project cards: photos, tabs, buttons */
+.proj .art{min-height:400px}
+.media{position:relative}
+.viewer.gal{cursor:default}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal .nv{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(111,182,255,.5);background:rgba(6,26,58,.7);color:#fff;font:700 22px var(--head);cursor:pointer}
+.gal .nv:hover{background:var(--royal)}.gal .pv{left:12px}.gal .nx{right:12px}
+.gal .dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;justify-content:center;gap:8px}
+.gal .dots b{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45)}.gal .dots b.on{background:var(--cyan)}
+.vtabs{position:absolute;top:12px;right:14px;z-index:5;display:flex;gap:6px}
+.vtabs button{padding:6px 14px;border-radius:99px;border:1px solid rgba(111,182,255,.45);background:rgba(6,26,58,.75);color:#fff;font:600 13px var(--mono);cursor:pointer}
+.vtabs button.on{background:var(--royal)}
+.pbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.pb{display:inline-flex;align-items:center;padding:10px 18px;border-radius:9px;border:1.5px solid #9fbfe4;color:var(--royal);font:700 14px var(--head);transition:background .2s,transform .2s}
+.pb:hover{background:var(--ice);transform:translateY(-2px)}
+.pb.main{background:var(--royal);border-color:var(--royal);color:#fff}.pb.main:hover{background:#115388}
+
+/* Workflow */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:48px;right:0;top:23px;height:2px;background:linear-gradient(90deg,var(--blue),var(--line))}
+.step{position:relative;padding-right:28px;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--royal);color:#fff;font:700 18px var(--head);margin-bottom:22px;box-shadow:0 0 0 7px var(--ice)}
+.step h3{font-size:19px}
+.step p{margin-top:8px;color:var(--soft);font-size:15.5px}
+
+/* Contact */
+.contact .box{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:52px;border:1px solid rgba(111,182,255,.35);border-radius:22px;background:linear-gradient(135deg,rgba(23,105,170,.45),rgba(6,26,58,.7));backdrop-filter:blur(10px)}
+.contact h2 span{display:block;color:var(--cyan)}
+.contact p{margin-top:14px;max-width:540px;color:var(--mutedD)}
+.acts{display:flex;flex-direction:column;gap:12px;min-width:190px}
+footer{background:#041227;color:var(--mutedD);padding:28px 0;font-size:14px}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a:hover{color:var(--cyan)}
+
+@media(max-width:900px){
+  .hero-grid,.about{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:40px 0}.steps::before{display:none}
+  .contact .box{flex-direction:column;align-items:flex-start;padding:34px}
+  .acts{flex-direction:row;flex-wrap:wrap}
+  .links a:not(.cta){display:none}
+  .projects{grid-template-columns:1fr}
+  .viewer,.proj .art{min-height:380px}
+}
+@media(max-width:600px){
+  section{padding:72px 0}.hero{padding-top:128px}
+  .grid3,.projects,.steps{grid-template-columns:1fr}
+  .tag.a{left:0}.tag.b{right:0}
+  .btns .btn{width:100%}
+  .viewer,.proj .art{min-height:340px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Hide automatic project-number labels */
+.proj .viewer > i,
+.proj .art > i {
+  display: none !important;
+}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<header>
+  <nav class="container" aria-label="Main">
+    <a class="brand" href="#home" aria-label="Jounium YT home"><span class="mark">YT</span><span>Jounium YT<small>Engineering portfolio</small></span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a>
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="live"><span class="dot"></span>Electronics and hardware engineering</div>
+      <h1>Designing hardware.<span>Building intelligence.</span></h1>
+      <p class="lead">I'm Jounium YT, an electronics and hardware engineer focused on PCB design, embedded systems and AI edge hardware: small, efficient devices that think where the data is.</p>
+      <div class="btns">
+        <a class="btn solid" href="#projects">Explore my projects</a>
+        <a class="btn line" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="board" role="img" aria-label="Animated circuit board with an AI chip at the center">
+      <svg viewBox="0 0 520 460" aria-hidden="true">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10408a"/><stop offset="1" stop-color="#07204a"/></linearGradient>
+          <path id="p1" d="M184 190H110L80 160H30"/><path id="p2" d="M184 220H100L70 250H30"/><path id="p3" d="M184 250H150L120 280V420"/>
+          <path id="p4" d="M336 190H410L440 160H490"/><path id="p5" d="M336 230H400L430 260H490"/><path id="p6" d="M336 270H370L400 300V420"/>
+          <path id="p7" d="M225 154V100L255 70H420"/><path id="p8" d="M295 154V120H340L360 90V30"/><path id="p9" d="M225 306V360L255 390V420"/><path id="p10" d="M295 306V380L315 400V420"/>
+        </defs>
+        <rect x="10" y="10" width="500" height="440" rx="22" fill="url(#bg1)" stroke="#3a78c4" stroke-width="2"/>
+        <g><use href="#p1" class="t"/><use href="#p2" class="t"/><use href="#p3" class="t"/><use href="#p4" class="t"/><use href="#p5" class="t"/><use href="#p6" class="t"/><use href="#p7" class="t"/><use href="#p8" class="t"/><use href="#p9" class="t"/><use href="#p10" class="t"/></g>
+        <g><use href="#p1" class="f"/><use href="#p2" class="f" style="animation-delay:-.8s"/><use href="#p3" class="f" style="animation-delay:-1.6s"/><use href="#p4" class="f" style="animation-delay:-.4s"/><use href="#p5" class="f" style="animation-delay:-1.2s"/><use href="#p6" class="f" style="animation-delay:-2s"/><use href="#p7" class="f" style="animation-delay:-2.4s"/><use href="#p8" class="f" style="animation-delay:-.2s"/><use href="#p9" class="f" style="animation-delay:-1.4s"/><use href="#p10" class="f" style="animation-delay:-2.8s"/></g>
+        <g class="pad"><circle cx="30" cy="160" r="7"/><circle cx="30" cy="250" r="7"/><circle cx="120" cy="420" r="7"/><circle cx="490" cy="160" r="7"/><circle cx="490" cy="260" r="7"/><circle cx="400" cy="420" r="7"/><circle cx="420" cy="70" r="7"/><circle cx="360" cy="30" r="7"/><circle cx="255" cy="420" r="7"/><circle cx="315" cy="420" r="7"/></g>
+        <g fill="#c9d9ee"><rect x="56" y="330" width="16" height="8" rx="2"/><rect x="80" y="330" width="16" height="8" rx="2"/><rect x="440" y="340" width="8" height="16" rx="2"/><rect x="440" y="364" width="8" height="16" rx="2"/><rect x="150" y="60" width="16" height="8" rx="2"/><rect x="380" y="120" width="16" height="8" rx="2"/></g>
+        <rect x="183" y="153" width="154" height="154" fill="none" stroke="#8cc8ff" stroke-width="7" stroke-dasharray="9 8"/>
+        <rect x="190" y="160" width="140" height="140" rx="10" fill="#071b3c" stroke="#5fb0ff" stroke-width="2.5"/>
+        <path d="M228 195L260 212M228 195L260 248M228 230L260 212M228 230L260 248M228 265L260 212M228 265L260 248M260 212L292 230M260 248L292 230" stroke="#2f78cf" stroke-width="1.5"/>
+        <circle class="node" cx="228" cy="195" r="5"/><circle class="node" style="animation-delay:-.6s" cx="228" cy="230" r="5"/><circle class="node" style="animation-delay:-1.2s" cx="228" cy="265" r="5"/>
+        <circle class="node" style="animation-delay:-.3s" cx="260" cy="212" r="5"/><circle class="node" style="animation-delay:-.9s" cx="260" cy="248" r="5"/><circle class="node" style="animation-delay:-1.5s" cx="292" cy="230" r="6"/>
+        <text x="260" y="182" text-anchor="middle" fill="#aee3ff" font-family="Sora,Arial,sans-serif" font-weight="700" font-size="12">EDGE AI</text>
+      </svg>
+      <div class="tag a">PCB design<small>From schematic to layout</small></div>
+      <div class="tag b">Edge AI<small>Intelligence on the device</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track" id="track">
+    <span>KiCad</span><span>PCB layout</span><span>ESP32</span><span>STM32</span><span>USB-C</span><span>SPI</span><span>I²C</span><span>DC-DC</span><span>Low power</span><span>Edge AI</span><span>TinyML</span><span>Inference</span><span>DFM</span><span>Firmware</span><span>Signal integrity</span>
+  </div>
+</div>
+
+<section class="light" id="about">
+  <div class="container about">
+    <div class="id">
+      <div class="mono">YT</div>
+      <h3>Engineering the details that make hardware work.</h3>
+      <p>This portfolio brings together my work, my technical interests and my ongoing exploration of electronic hardware and embedded intelligence.</p>
+    </div>
+    <div class="txt">
+      <div class="label">My approach</div>
+      <h2>From circuit concepts to <em>real hardware.</em></h2>
+      <p>I care about the whole hardware process: choosing components, drawing schematics, laying out PCBs, integrating firmware and respecting the practical limits of a physical product.</p>
+      <p>My focus is thoughtful engineering, efficient power use and reliable interfaces, in designs that can be tested, understood and improved.</p>
+      <div class="focus">
+        <div><span>✓</span><span><b>Hardware-first thinking</b><small>Components, circuits, interfaces and constraints.</small></span></div>
+        <div><span>✓</span><span><b>End-to-end development</b><small>Schematic, PCB, firmware integration and validation.</small></span></div>
+        <div><span>✓</span><span><b>Efficient intelligent devices</b><small>Low-power embedded systems and edge AI.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="expertise">
+  <div class="container">
+    <div class="head">
+      <div class="label">What I work on</div>
+      <h2>Technical expertise</h2>
+      <p>Core areas across electronics, board-level engineering and embedded intelligence.</p>
+    </div>
+    <div class="grid3" id="expertiseGrid"></div>
+  </div>
+</section>
+
+<section class="light" id="projects">
+  <div class="container">
+    <div class="head">
+      <div class="label">Selected work</div>
+      <h2>Projects and experiments</h2>
+      <p>Explore selected open-source projects to spark inspiration and transform innovative concepts into practical solutions.</p>
+    </div>
+    <div class="projects" id="projectGrid"></div>
+  </div>
+</section>
+
+<section class="ice" id="workflow">
+  <div class="container">
+    <div class="head">
+      <div class="label">Engineering approach</div>
+      <h2>Think clearly. Build methodically.</h2>
+      <p>A structured process transforms your vision into high-quality hardware solutions that solve real problems, optimize performance, and turn your ideas into reality.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Define</h3><p>Clarify functions, interfaces, power limits, dimensions and intended use.</p></div>
+      <div class="step"><h3>Design</h3><p>Choose components and develop the schematic and PCB around the requirements.</p></div>
+      <div class="step"><h3>Prototype</h3><p>Inspect the board, check power rails, test interfaces and record results.</p></div>
+      <div class="step"><h3>Deliver</h3><p>Receive a complete, reliable hardware solution, optimized for performance and ready to bring your vision to life.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark contact" id="contact">
+  <div class="container">
+    <div class="box">
+      <div>
+        <h2>Let's drive innovation.<span>Let's change reality.</span></h2>
+        <p>Turn bold ideas and complex engineering challenges into groundbreaking hardware solutions. Start building your vision and bring innovation to life.</p>
+      </div>
+      <div class="acts">
+        <a class="btn solid" href="https://ma.linkedin.com/in/youness-taik-434166200" target="_blank" rel="noopener noreferrer">Chat with me on LinkedIn</a>
+        <a class="btn line" href="https://ma.linkedin.com/in/youness-taik-434166200" target="_blank" rel="noopener noreferrer">View my LinkedIn profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>&copy; <span id="yr">2026</span> Jounium YT. Engineering portfolio.</span>
+    <a href="#home">Back to top</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+
+// Living tech network behind the page
+(function(){
+  var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,P=[],m={x:-999,y:-999},
+      still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){
+    W=c.width=innerWidth;H=c.height=innerHeight;
+    var n=Math.min(100,Math.floor(W*H/15000));P=[];
+    for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p=P[i];
+      if(!still){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+      for(var j=i+1;j<P.length;j++){
+        var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+        if(d<150){x.strokeStyle='rgba(111,182,255,'+(.4*(1-d/150))+')';x.lineWidth=1;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}
+      }
+      var dm=Math.hypot(p.x-m.x,p.y-m.y);
+      if(dm<190){x.strokeStyle='rgba(95,227,242,'+(.7*(1-dm/190))+')';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(m.x,m.y);x.stroke()}
+      x.fillStyle='rgba(143,205,255,.9)';x.beginPath();x.arc(p.x,p.y,2,0,6.283);x.fill();
+    }
+    if(!still)requestAnimationFrame(draw);
+  }
+  addEventListener('resize',function(){size();if(still)draw()});
+  addEventListener('mousemove',function(e){m.x=e.clientX;m.y=e.clientY});
+  size();draw();
+})();
+</script>
+<script src="projects.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+// Read-only 3D viewers and project cards.
+// OWNER ONLY: projects, photos and 3D models are listed in projects.js, a file that only YOU can change on GitHub.
+// Visitors can only look and rotate. There is no upload and no file picker anywhere on this page.
+const CDN='https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/';
+const WORKER=`importScripts('${CDN}occt-import-js.js');
+onmessage=async e=>{try{const o=await occtimportjs({locateFile:n=>'${CDN}'+n});
+postMessage({ok:1,r:o.ReadStepFile(new Uint8Array(e.data),{linearUnit:'millimeter',linearDeflectionType:'bounding_box_ratio',linearDeflection:.003,angularDeflection:.6})})}
+catch(err){postMessage({ok:0,e:String(err)})}}`;
+const el=(t,c,x)=>{const e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
+let queue=Promise.resolve();                 // 3D models are prepared one after the other
+const later=fn=>{queue=queue.then(fn)};
+
+async function fetchModel(f,bar){
+  const r=await fetch(f); if(!r.ok)throw new Error('missing '+f);
+  const total=+r.headers.get('content-length')||8e6, rd=r.body.getReader(), parts=[]; let got=0;
+  for(;;){const {done,value}=await rd.read(); if(done)break; parts.push(value); got+=value.length; bar(Math.min(.6,got/total*.6));}
+  let all=new Uint8Array(got), o=0; for(const p of parts){all.set(p,o); o+=p.length}
+  if(all[0]===0x1f&&all[1]===0x8b){        // gzip signature: unpack it in the browser
+    all=new Uint8Array(await new Response(new Blob([all]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+  }
+  return all;
+}
+async function download(path,bar){
+  // the small compressed copy first (name.step.gz), then the plain .step
+  for(const f of /\.gz$/i.test(path)?[path]:[path+'.gz',path]){
+    try{const all=await fetchModel(f,bar); if(new TextDecoder().decode(all.subarray(0,40)).includes('ISO-10303'))return all.buffer}catch(e){}
+  }
+  throw new Error('Model file not found, or not a STEP file: '+path);
+}
+function convert(buf){
+  return new Promise((ok,no)=>{
+    const w=new Worker(URL.createObjectURL(new Blob([WORKER],{type:'text/javascript'})));
+    w.onmessage=e=>{w.terminate(); e.data.ok&&e.data.r.success?ok(e.data.r):no(new Error(e.data.e||'STEP conversion failed'))};
+    w.onerror=no; w.postMessage(buf,[buf]);
+  });
+}
+
+function make3D(p,n){
+  const pane=el('div','viewer');
+  pane.innerHTML='<i></i><div class="vstate"><p></p><div class="bar" hidden><i></i></div><button class="btn solid" type="button">Load the 3D model</button></div><div class="vhint" hidden>Drag to rotate. Use + and &minus; to zoom.</div><div class="vctl" hidden><button type="button" aria-label="Zoom in">+</button><button type="button" aria-label="Zoom out">&minus;</button><button type="button" aria-label="Reset view">&#10226;</button></div>';
+  const q=s=>pane.querySelector(s), st=q('.vstate'), msgEl=q('.vstate p'), barBox=q('.bar'), fill=q('.bar i'),
+        go=q('.vstate button'), hint=q('.vhint'), ctlBox=q('.vctl'), [zi,zo,rs]=ctlBox.querySelectorAll('button');
+  q(':scope>i').textContent='Project '+n+' \u00b7 3D';
+  const msg=t=>msgEl.textContent=t, bar=x=>fill.style.width=x*100+'%';
+  msg('Interactive 3D model. Drag it with your mouse to rotate.');
+  let busy=false;
+
+  async function show(result,isGLB=false){
+    const THREE=await import('three'), {OrbitControls}=await import('three/addons/controls/OrbitControls.js');
+    const ren=new THREE.WebGLRenderer({antialias:true,alpha:true});
+    ren.setPixelRatio(Math.min(devicePixelRatio,2)); pane.prepend(ren.domElement);
+    const scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1,.1,1e4);
+    scene.add(new THREE.HemisphereLight(0xdbe9ff,0x10284a,1.3));
+    const key=new THREE.DirectionalLight(0xffffff,2.4); key.position.set(1,2,1.5); scene.add(key);
+    const fillL=new THREE.DirectionalLight(0x6fb6ff,1.1); fillL.position.set(-2,1,-1.5); scene.add(fillL);
+    const mk=c=>new THREE.MeshStandardMaterial({color:c?new THREE.Color().setRGB(c[0],c[1],c[2],THREE.SRGBColorSpace):0x9fb4cc,metalness:.35,roughness:.5,side:THREE.DoubleSide});
+    const g=new THREE.Group();
+    if(isGLB){
+      g.add(result);
+    }else{
+    for(const m of result.meshes){
+      const geo=new THREE.BufferGeometry();
+      geo.setAttribute('position',new THREE.Float32BufferAttribute(m.attributes.position.array,3));
+      if(m.attributes.normal)geo.setAttribute('normal',new THREE.Float32BufferAttribute(m.attributes.normal.array,3));
+      geo.setIndex(m.index.array); if(!m.attributes.normal)geo.computeVertexNormals();
+      let mat=mk(m.color);
+      if(m.brep_faces&&m.brep_faces.some(f=>f.color)){
+        const list=[],seen={};
+        for(const f of m.brep_faces){const c=f.color||m.color,k=c?c.join():'d';
+          if(!(k in seen)){seen[k]=list.length; list.push(mk(c))}
+          geo.addGroup(f.first*3,(f.last-f.first+1)*3,seen[k]);}
+        mat=list;
+      }
+      g.add(new THREE.Mesh(geo,mat));
+    }
+    }
+    if(!isGLB)g.rotation.x=-Math.PI/2;                 // KiCad boards are Z-up: lay the board flat
+    g.updateMatrixWorld(true);
+    const box=new THREE.Box3().setFromObject(g); g.position.sub(box.getCenter(new THREE.Vector3()));
+    scene.add(g);
+    const size=box.getSize(new THREE.Vector3()).length(), d=size*1.1, home=new THREE.Vector3(d*.55,d*.6,d*.8);
+    cam.near=size/200; cam.far=size*30; cam.position.copy(home); cam.updateProjectionMatrix();
+    const ctl=new OrbitControls(cam,ren.domElement);
+    ctl.enableDamping=true; ctl.enablePan=false; ctl.enableZoom=false;     // the mouse wheel keeps scrolling the page
+    ctl.minDistance=size*.35; ctl.maxDistance=size*3;
+    ctl.autoRotate=!matchMedia('(prefers-reduced-motion:reduce)').matches; ctl.autoRotateSpeed=1.4;
+    ctl.addEventListener('start',()=>ctl.autoRotate=false);               // the visitor takes control
+    const zoom=k=>{const v=cam.position.clone().sub(ctl.target).multiplyScalar(k);
+      cam.position.copy(ctl.target).add(v.setLength(THREE.MathUtils.clamp(v.length(),ctl.minDistance,ctl.maxDistance)))};
+    zi.onclick=()=>zoom(.8); zo.onclick=()=>zoom(1.25);
+    rs.onclick=()=>{cam.position.copy(home); ctl.target.set(0,0,0)};
+    new ResizeObserver(()=>{const w=pane.clientWidth,h=pane.clientHeight; if(!w||!h)return; ren.setSize(w,h,false); cam.aspect=w/h; cam.updateProjectionMatrix()}).observe(pane);
+    let vis=true; new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(pane);
+    (function loop(){requestAnimationFrame(loop); if(vis){ctl.update(); ren.render(scene,cam)}})();
+    st.classList.add('off'); hint.hidden=ctlBox.hidden=false;
+  }
+  async function run(){
+    barBox.hidden=false; bar(.02);
+    try{
+      msg('Downloading the model\u2026');
+      if(/\.glb(?:[?#]|$)/i.test(p.model)){
+        const bytes=await fetchModel(p.model,bar);
+        const {GLTFLoader}=await import('three/addons/loaders/GLTFLoader.js');
+        msg('Preparing the 3D model\u2026'); bar(.7);
+        const base=new URL('.',new URL(p.model,document.baseURI)).href;
+        const gltf=await new GLTFLoader().parseAsync(bytes.buffer,base);
+        bar(.95); await show(gltf.scene,true);
+      }else{
+        const buf=await download(p.model,bar);
+        msg('Building the 3D model. This can take a few seconds\u2026'); bar(.7);
+        const r=await convert(buf); msg('Almost ready\u2026'); bar(.95); await show(r);
+      }
+    }catch(err){
+      console.error('3D model failed for "'+(p.title||'project '+n)+'". Owner: check the file name in projects.js and that the file is uploaded.',err);
+      busy=false; barBox.hidden=true; msg('Unable to load the 3D model. '+err.message);
+      go.textContent='Try again'; go.hidden=false;
+    }
+  }
+  const start=()=>{if(busy)return; busy=true; go.hidden=true; barBox.hidden=false; msg('Preparing the 3D model\u2026'); later(run)};
+  go.onclick=start;
+  new IntersectionObserver((e,ob)=>{
+    if(e[0].isIntersecting){ob.disconnect(); if(innerWidth>900&&!(navigator.connection&&navigator.connection.saveData))start()}
+  },{rootMargin:'200px'}).observe(pane);
+  return pane;
+}
+
+function makeGallery(p,n){
+  const g=el('div','viewer gal'), tag=el('i','','Project '+n+' \u00b7 Photos'); g.append(tag);
+  const imgs=p.photos.map((src,k)=>{const im=el('img'); im.src=src; im.alt=(p.title||'Project '+n)+' photo '+(k+1); im.loading='eager'; im.hidden=k>0; g.append(im); return im});
+  if(imgs.length>1){
+    const dots=el('div','dots'), ds=imgs.map((_,k)=>{const b=el('b',k?'':'on'); dots.append(b); return b});
+    let k=0; const move=d=>{imgs[k].hidden=true; ds[k].className=''; k=(k+d+imgs.length)%imgs.length; imgs[k].hidden=false; ds[k].className='on'};
+    const pv=el('button','nv pv','\u2039'), nx=el('button','nv nx','\u203a');
+    pv.type=nx.type='button'; pv.ariaLabel='Previous photo'; nx.ariaLabel='Next photo';
+    pv.onclick=()=>move(-1); nx.onclick=()=>move(1); g.append(pv,nx,dots);
+  }
+  return g;
+}
+function makeArt(p,n){
+  const a=el('div','art'); a.append(el('i','','Project '+n), el('div','chip',p.chip||'PCB')); return a;
+}
+
+const grid=document.getElementById('projectGrid'), LIST=Array.isArray(window.PROJECTS)?window.PROJECTS:[];
+if(!LIST.length)grid.append(el('p','','Projects coming soon.'));
+LIST.forEach((p,i)=>{
+  const n=i+1, card=el('article','proj'), media=el('div','media');
+  const has3=!!p.model, hasPh=Array.isArray(p.photos)&&p.photos.length>0;
+  const pane3=has3?make3D(p,n):null, gal=hasPh?makeGallery(p,n):null;
+  if(pane3)media.append(pane3);
+  if(gal)media.append(gal);
+  if(pane3&&gal)pane3.hidden=true;           // photos first; the 3D model opens only when the visitor clicks "3D"
+  if(!has3&&!hasPh)media.append(makeArt(p,n));
+  if(has3&&hasPh){                           // both: small tabs to switch between photos and 3D
+    const tabs=el('div','vtabs'), bp=el('button','on','Photos'), b3=el('button','','3D'); bp.type=b3.type='button';
+    bp.onclick=()=>{gal.hidden=false; pane3.hidden=true; bp.className='on'; b3.className=''};
+    b3.onclick=()=>{gal.hidden=true; pane3.hidden=false; b3.className='on'; bp.className=''};
+    tabs.append(bp,b3); media.append(tabs);
+  }
+  const body=el('div','pbody'); body.append(el('h3','',p.title||'Project-'+n), el('p','',p.description||''));
+  if(Array.isArray(p.tags)&&p.tags.length){const t=el('div','pills'); p.tags.forEach(x=>t.append(el('span','',x))); body.append(t)}
+  const btns=el('div','pbtns');
+  (p.buttons||[]).forEach((b,k)=>{const a=el('a',k?'pb':'pb main',b.label); a.href=b.url; a.target='_blank'; a.rel='noopener noreferrer'; btns.append(a)});
+  if(btns.children.length)body.append(btns);
+  card.append(media,body); grid.append(card);
+});
+</script>
+<script src="expertise.js"></script>
+<script>
+(() => {
+  const grid = document.getElementById('expertiseGrid');
+  if (!grid) return;
+  const icons = ['⌁', '⌘', 'μ', '↯', 'AI', '◎'];
+  const items = Array.isArray(window.EXPERTISE) ? window.EXPERTISE : [];
+  grid.replaceChildren();
+  items.forEach((item, index) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    const icon = document.createElement('div');
+    icon.className = 'ic';
+    icon.textContent = icons[index % icons.length];
+    const title = document.createElement('h3');
+    title.textContent = item.title;
+    const description = document.createElement('p');
+    description.textContent = item.description;
+    const tags = document.createElement('div');
+    tags.className = 'pills';
+    (item.tags || []).forEach(label => {
+      const tag = document.createElement('span');
+      tag.textContent = label;
+      tags.append(tag);
+    });
+    card.append(icon, title, description, tags);
+    grid.append(card);
+  });
+})();
+</script>
+</body>
+</html>
