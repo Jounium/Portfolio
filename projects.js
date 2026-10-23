@@ -35,11 +35,19 @@ const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + n
 window.PROJECTS = [
   {
     title: 'Next Product',
-    description: 'Product description.',
-    tags: ['PCB Design'],
-    model: '',
-    photos: [],
-    buttons: [],
+    description: 'Next',
+    tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
+    model: 'Models/Project-6.glb',
+    photos: ['Photos/Project-6-01.png',
+             'Photos/Project-6-02.png',
+             'Photos/Project-6-03.png',
+             'Photos/Project-6-04.png',
+            ],
+    buttons: [
+      { label: 'Show more details', url: ghp(6) },
+      // { label: 'Project files', url: gh('project-1') },
+      // { label: 'Schematic',     url: 'files/project-1-schematic.pdf' },
+    ],
   },
   {
     title: 'ProdTrack Touch',
