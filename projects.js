@@ -34,9 +34,9 @@ const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + n
 
 window.PROJECTS = [
   {
-    title: 'TouchTrack | RFID Production Terminal',
-    description: 'A custom PCB combining RFID identification and a touchscreen interface for real-time production tracking. Designed to capture production events and operator input directly at the workstation, providing visibility into production progress.',
-    tags: ['KiCad', 'PCB', 'Edge AI'],
+    title: 'ProdTrack Touch',
+    description: 'A production tracking PCB combining RFID identification and a touchscreen for recording production events, capturing operator input, and monitoring progress in real time.',
+    tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
     model: 'Models/Project-1.glb',
     photos: ['Photos/Project-1-01.png',
              'Photos/Project-1-02.png',
@@ -50,9 +50,9 @@ window.PROJECTS = [
     ],
   },
   {
-    title: 'Project-2',
-    description: 'Project details coming soon.',
-    tags: ['Coming soon'],
+    title: 'ProdTrack Node',
+    description: 'A compact production tracking PCB with LED indicators and connectors for an external RFID reader and button, supporting real-time event capture and flexible workstation integration.',
+    tags: ['PCB Design', 'RFID', 'LED Indicators', 'Production Tracking'],
     model: 'Models/Project-2.gz',        // example: 'models/project-2.step.gz'
     photos: ['Photos/Project-2-01.png',
              'Photos/Project-2-02.png',
@@ -64,9 +64,9 @@ window.PROJECTS = [
     ],
   },
   {
-    title: 'Project-3',
-    description: 'Project details coming soon.',
-    tags: ['Coming soon'],
+    title: 'ProdTrack Pilot',
+    description: 'A small-batch RFID, LED, and button prototype built for firmware development and testing alongside ProdTrack Node manufacturing, shortening delivery time and enabling deployment alongside the final boards.',
+    tags: ['Prototyping', 'RFID', 'Firmware Testing', 'Production Tracking'],
     model: 'Models/Project-3.gz',        // example: 'models/project-3.step.gz'
     photos: ['Photos/Project-3-01.png',
              'Photos/Project-3-02.png',
@@ -92,9 +92,9 @@ window.PROJECTS = [
     ],
   },
  {
-  title: 'Project-5',
-  description: '...',
-  tags: ['PCB'],
+  title: 'FlashBridge',
+  description: 'A USB-to-UART programmer supporting 3.3 V and 5 V logic, with automatic reset and manual boot/reset controls. Centralizing programming circuitry reduces component count and manufacturing cost on compatible target boards.',
+  tags: ['USB-to-UART', '3.3V / 5V Logic', 'Auto Reset', 'MCU Programming'],
   model: 'Models/project-5.step.gz',   // wla ''
     photos: ['Photos/Project-5-01.png',
              'Photos/Project-5-02.png',
