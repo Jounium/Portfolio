@@ -97,10 +97,10 @@ window.PROJECTS = [
     tags: ['Prototyping', 'RFID', 'Firmware Testing', 'Production Tracking'],
     model: 'Models/Project-3.gz',        // example: 'models/project-3.step.gz'
     photos: [
-    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-01.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-02.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-03.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-04.png'
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/ProdTrack_Pilote-01.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/ProdTrack_Pilote-02.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/ProdTrack_Pilote-03.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/ProdTrack_Pilote-PCB-Layout.png'
     ],     
     buttons: [
       { label: 'Show more details', url: ghp(3) },
