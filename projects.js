@@ -96,11 +96,12 @@ window.PROJECTS = [
     description: 'A small-batch RFID, LED, and button prototype built for firmware development and testing alongside ProdTrack Node manufacturing, shortening delivery time and enabling deployment alongside the final boards.',
     tags: ['Prototyping', 'RFID', 'Firmware Testing', 'Production Tracking'],
     model: 'Models/Project-3.gz',        // example: 'models/project-3.step.gz'
-    photos: ['Photos/Project-3-01.png',
-             'Photos/Project-3-02.png',
-             'Photos/Project-3-03.png',
-             'Photos/Project-3-04.png',
-            ],       // example: ['photos/project-3-a.jpg']
+    photos: [
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-01.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-02.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-03.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Pilote/main/Photos/Project-1-04.png'
+    ],     
     buttons: [
       { label: 'Show more details', url: ghp(3) },
     ],
