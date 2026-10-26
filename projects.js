@@ -38,11 +38,12 @@ window.PROJECTS = [
     description: 'A production tracking PCB combining RFID identification and a touchscreen for recording production events, capturing operator input, and monitoring progress in real time.',
     tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
     model: 'Models/Project-1.glb',
-    photos: ['Photos/Project-1-01.png',
-             'Photos/Project-1-02.png',
-             'Photos/Project-1-03.png',
-             'Photos/Project-1-04.png',
-            ],
+    photos: [
+    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-01.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-02.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-03.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-PCB-Layout.png'
+   ],  
     buttons: [
       { label: 'Show more details', url: ghp(1) },
       // { label: 'Project files', url: gh('project-1') },
@@ -54,11 +55,12 @@ window.PROJECTS = [
   description: 'A USB-to-UART programmer supporting 3.3 V and 5 V logic, with automatic reset and manual boot/reset controls. Centralizing programming circuitry reduces component count and manufacturing cost on compatible target boards.',
   tags: ['USB-to-UART', '3.3V / 5V Logic', 'Auto Reset', 'MCU Programming'],
   model: 'Models/project-5.step.gz',   // wla ''
-    photos: ['Photos/Project-5-01.png',
-             'Photos/Project-5-02.png',
-             'Photos/Project-5-03.png',
-             'Photos/Project-5-04.png',
-            ],
+    photos: [
+    'https://raw.githubusercontent.com/Jounium/FlashBridge/main/Photos/FlashBridge-01.png',
+    'https://raw.githubusercontent.com/Jounium/FlashBridge/main/Photos/FlashBridge-02.png',
+    'https://raw.githubusercontent.com/Jounium/FlashBridge/main/Photos/FlashBridge-03.png',
+    'https://raw.githubusercontent.com/Jounium/FlashBridge/main/Photos/FlashBridge-PCB-Layout.png'
+   ],  
   buttons: [{ label: 'Show more details', url: ghp(5) }],
 },
   {
@@ -66,11 +68,12 @@ window.PROJECTS = [
     description: 'A compact production tracking PCB with LED indicators and connectors for an external RFID reader and button, supporting real-time event capture and flexible workstation integration.',
     tags: ['PCB Design', 'RFID', 'LED Indicators', 'Production Tracking'],
     model: 'Models/Project-2.gz',        // example: 'models/project-2.step.gz'
-    photos: ['Photos/Project-2-01.png',
-             'Photos/Project-2-02.png',
-             'Photos/Project-2-03.png',
-             'Photos/Project-2-04.png',
-            ],     // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
+    photos: [
+  'https://raw.githubusercontent.com/Jounium/ProdTrach_Node/main/Photos/ProdTrack_Node-01.png',
+  'https://raw.githubusercontent.com/Jounium/ProdTrach_Node/main/Photos/ProdTrack_Node-02.png',
+  'https://raw.githubusercontent.com/Jounium/ProdTrach_Node/main/Photos/ProdTrack_Node-03.png',
+  'https://raw.githubusercontent.com/Jounium/ProdTrach_Node/main/Photos/ProdTrack_Node-PCB-Layout.png'
+  ],        // example: ['photos/project-2-a.jpg', 'photos/project-2-b.jpg']
     buttons: [
       { label: 'Show more details', url: ghp(2) },
     ],
