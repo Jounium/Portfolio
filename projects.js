@@ -39,10 +39,10 @@ window.PROJECTS = [
     tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
     model: 'Models/Project-1.glb',
     photos: [
-    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-01.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-02.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-03.png',
-    'https://raw.githubusercontent.com/Jounium/ProdTrach_Touch/main/Photos/ProdTrack_Touch-PCB-Layout.png'
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Touch/main/Photos/ProdTrack_Touch-01.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Touch/main/Photos/ProdTrack_Touch-02.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Touch/main/Photos/ProdTrack_Touch-03.png',
+    'https://raw.githubusercontent.com/Jounium/ProdTrack_Touch/main/Photos/ProdTrack_Touch-PCB-Layout.png'
    ],  
     buttons: [
       { label: 'Show more details', url: ghp(1) },
