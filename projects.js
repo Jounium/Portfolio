@@ -34,22 +34,6 @@ const ghp = num  => 'https://github.com/users/' + GITHUB_USER + '/projects/' + n
 
 window.PROJECTS = [
   {
-    title: 'Next Product',
-    description: 'Next',
-    tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
-    model: 'Models/Project-6.glb',
-    photos: ['Photos/Project-6-01.png',
-             'Photos/Project-6-02.png',
-             'Photos/Project-6-03.png',
-             'Photos/Project-6-04.png',
-            ],
-    buttons: [
-      { label: 'Show more details', url: ghp(6) },
-      // { label: 'Project files', url: gh('project-1') },
-      // { label: 'Schematic',     url: 'files/project-1-schematic.pdf' },
-    ],
-  },
-  {
     title: 'ProdTrack Touch',
     description: 'A production tracking PCB combining RFID identification and a touchscreen for recording production events, capturing operator input, and monitoring progress in real time.',
     tags: ['PCB Design', 'RFID', 'Touchscreen', 'Production Tracking'],
@@ -104,20 +88,6 @@ window.PROJECTS = [
   ],     
     buttons: [
       { label: 'Show more details', url: ghp(3) },
-    ],
-  },
-  {
-    title: 'Project-4',
-    description: 'Project details coming soon.',
-    tags: ['Coming soon'],
-    model: 'Models/Project-4.gz',        // example: 'models/project-4.step.gz'
-    photos: ['Photos/Project-4-01.png',
-             'Photos/Project-4-02.png',
-             'Photos/Project-4-03.png',
-             'Photos/Project-4-04.png',
-            ],       // example: ['photos/project-4-a.jpg']
-    buttons: [
-      { label: 'Show more details', url: ghp(4) },
     ],
   },
 ];
